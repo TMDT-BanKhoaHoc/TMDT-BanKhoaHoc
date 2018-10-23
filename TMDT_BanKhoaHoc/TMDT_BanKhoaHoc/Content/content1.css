@@ -1,0 +1,5 @@
+﻿@media (max-width:639px) {
+    #sticky.adbox {
+        display: none;
+    }
+}

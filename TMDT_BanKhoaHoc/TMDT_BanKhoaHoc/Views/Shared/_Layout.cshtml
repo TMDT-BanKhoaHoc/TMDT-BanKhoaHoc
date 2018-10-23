@@ -1,41 +1,375 @@
 ﻿<!DOCTYPE html>
+<!-- saved from url=(0019)https://khoahoc.tv/ -->
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>KhoaHoc.tv: Khoa học - Công nghệ - Tri Thức - Khám phá</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="~/Content/CSS.css" rel="stylesheet" />
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/bootstrap")
+	@RenderSection("scripts", required: false)
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <script id="google-apis" async="" src="~/Scripts/platform.js" gapi_processed="true"></script>
+    <script id="facebook-jssdk" src="~/Scripts/sdk.js"></script>
+    <script async="" src="~/Scripts/analytics.js"></script>
+    <script async="" src="~/Scripts/f.js"></script>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({
+			google_ad_client: "ca-pub-9275417305531302",
+			enable_page_level_ads: true
+		});</script>
+	<!--[if IE 6]>
+	 <link href="/themes/default/theme.ie.min.css" rel="stylesheet" />
+	<![endif]-->
+	<meta name="apple-mobile-web-app-title" content="KhoaHoc.tv">
+	<meta name="application-name" content="KhoaHoc.tv">
+	<link rel="apple-touch-icon" href="https://khoahoc.tv/favicon.192.png">
+	<link rel="icon" sizes="192x192" href="https://khoahoc.tv/favicon.192.png">
+
+	<link href="~/Content/content.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/f(1).js"></script>
+</head>
+<body class="showheader">
+	<script src="~/Scripts/script1.js"></script>
+	<div id="page">
+		<div id="header" class="clearfix">
+			<div id="toplink">
+				<ul class="social">
+					<li><a href="https://www.facebook.com/khoahoc.tivi" class="icon facebook" target="_blank">&nbsp;f&nbsp;</a></li>
+				</ul>
+			</div>
+			<div class="headerleft"><a href="https://khoahoc.tv/" id="logo" title="KhoaHoc.tv">KhoaHoc.tv</a></div>
+			<div id="searchBox">
+
+				<form action="https://khoahoc.tv/g" id="cse-search-box">
+
+					<input type="hidden" name="cx" value="partner-pub-9275417305531302:7110546885">
+					<input type="hidden" name="cof" value="FORID:10">
+					<input type="hidden" name="ie" value="UTF-8">
+					<input class="q" type="text" name="q" size="55" placeholder="Tìm kiếm Tùy Chỉnh" style="border: 1px solid rgb(126, 157, 185); padding: 2px; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px;">
+					<input class="asearch" type="submit" name="sa" value="Search">
+
+					<input name="siteurl" type="hidden" value="khoahoc.tv/"><input name="ref" type="hidden" value="www.google.com.vn/"><input name="ss" type="hidden" value="">
+				</form>
+			</div><a class="toggle menu"></a>
+			<a class="toggle search"></a>
+		</div>
+		<div id="mainmenu" class="clearfix">
+			<ul id="topnav" class="navigation clearfix">
+				<li class="item all">
+					<a href="https://khoahoc.tv/"><img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/home.png"> Trang chủ</a>
+
+				</li>
+				<li class="item  tax-cong-nghe">
+					<a href="https://khoahoc.tv/cong-nghe">
+						<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/Technology.png">
+						Công nghệ
+					</a>
+				</li>
+				<li class="item  tax-doi-song">
+					<a href="https://khoahoc.tv/doi-song">
+						<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/human.png">
+						Đời sống
+					</a>
+				</li>
+				<li class="item  tax-kham-pha-khoa-hoc">
+					<a href="https://khoahoc.tv/kham-pha-khoa-hoc">
+						<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/science1.png">
+						Khám phá khoa học
+					</a>
+				</li>
+				<li class="item  tax-vu-tru">
+					<a href="https://khoahoc.tv/vu-tru">
+						<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/satellite.png">
+						Khoa học vũ trụ
+					</a>
+				</li>
+				<li class="item  tax-1001-bi-an">
+					<a href="https://khoahoc.tv/1001-bi-an">
+						<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/alien.png">
+						1001 bí ẩn
+					</a>
+				</li>
+				<li class="item  tax-yhoc">
+					<a href="https://khoahoc.tv/yhoc">
+						<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/heart.png">
+						Y học - Sức khỏe
+					</a>
+				</li>
+			</ul>
+		</div>
+
+
+		<div id="main" class="indexpage clearfix">
+            <div class="content">
+                @RenderBody()
+            </div>
+			<div class="sidebar">
+				<div id="adrighttop" class="adbox">
+					<div id="adsense_right">
+						<!-- KH-300x250 -->
+						<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-9275417305531302" data-ad-slot="3791346881" eoosf0x="" hidden=""></ins>
+						<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+					</div>
+					<div style="margin:10px 0">
+						<!-- KhoaHoc Links 200x90 -->
+						<ins class="adsbygoogle" style="display:inline-block;width:200px;height:90px" data-ad-client="ca-pub-9275417305531302" data-ad-slot="5571326089" eoosf0x="" hidden=""></ins>
+						<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+					</div>
+				</div>
+				<div class="listbox highlight">
+					<div class="list-title">Tiêu điểm</div>
+					<ul>
+						<li class="list-item">
+							<a href="https://khoahoc.tv/13-do-vat-co-hinh-dang-la-thoi-xua-ma-it-ai-biet-duoc-cong-dung-that-cua-no-95453">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/do-vat-co-hinh-dang-ky-la-200-size-80x80-znd.jpg" alt="13 đồ vật có hình dáng lạ thời xưa mà ít ai biết được công dụng thật của nó">
+								13 đồ vật có hình dáng lạ thời xưa mà ít ai biết được công dụng thật của nó
+							</a>
+						</li>
+						<li class="list-item">
+							<a href="https://khoahoc.tv/13-thien-the-ngoai-lai-bi-an-tien-nhanh-ve-trai-dat-95440">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/sao-sieu-nhanh-200-size-80x80-znd.jpg" alt="13 thiên thể ngoại lai bí ẩn tiến nhanh về Trái đất">
+								13 thiên thể ngoại lai bí ẩn tiến nhanh về Trái đất
+							</a>
+						</li>
+						<li class="list-item">
+							<a href="https://khoahoc.tv/hoa-thach-rong-dai-gan-10000-met-giua-sa-mac-chau-phi-95403">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/hoa-thach-rong-200-size-80x80-znd.jpg" alt="“Hóa thạch rồng” dài gần 10.000 mét giữa sa mạc châu Phi?">
+								“Hóa thạch rồng” dài gần 10.000 mét giữa sa mạc châu Phi?
+							</a>
+						</li>
+						<li class="list-item">
+							<a href="https://khoahoc.tv/bi-an-thi-hai-co-gai-170-nam-khong-tan-ra-95416">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/thi-hai-khong-tan-ra-200-size-80x80-znd.jpg" alt="Bí ẩn thi hài cô gái 170 năm không tan rã">
+								Bí ẩn thi hài cô gái 170 năm không tan rã
+							</a>
+						</li>
+						<li class="list-item">
+							<a href="https://khoahoc.tv/bat-mi-diem-nong-de-cham-tran-nguoi-ngoai-hanh-tinh-nhat-the-gioi-95391">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/nguoi-ngoai-hanh-tinh-200-size-80x80-znd.jpg" alt="Bật mí &quot;điểm nóng&quot; dễ chạm trán người ngoài hành tinh nhất thế giới">
+								Bật mí "điểm nóng" dễ chạm trán người ngoài hành tinh nhất thế giới
+							</a>
+						</li>
+						<li class="list-item">
+							<a href="https://khoahoc.tv/neu-gap-nguoi-ngoai-hanh-tinh-con-nguoi-se-chet-vi-ung-thu-da-day-95369">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/du-lich-khong-gian-200-size-80x80-znd.jpg" alt="Nếu gặp người ngoài hành tinh, con người sẽ chết vì ung thư dạ dày?">
+								Nếu gặp người ngoài hành tinh, con người sẽ chết vì ung thư dạ dày?
+							</a>
+						</li>
+						<li class="list-item">
+							<a href="https://khoahoc.tv/thao-ngoi-bom-nguyen-tu-cong-viec-lanh-toc-gay-nhat-the-gioi-95417">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/vo-bom-nguyen-tu-200-size-80x80-znd.jpg" alt="Tháo ngòi bom nguyên tử - công việc &quot;lạnh tóc gáy&quot; nhất thế giới">
+								Tháo ngòi bom nguyên tử - công việc "lạnh tóc gáy" nhất thế giới
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div id="adrightsecond" class="adbox">
+
+				</div>
+                <link href="~/Content/content1.css" rel="stylesheet" />
+				<div class="adbox fbbox"><div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/khoahoc.tivi" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=567529899945423&amp;container_width=298&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fkhoahoc.tivi&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;small_header=true"><span style="vertical-align: bottom; width: 298px; height: 136px;"><iframe name="f20d2f0ba0ae138" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:page Facebook Social Plugin" src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/page.html" style="border: none; visibility: visible; width: 298px; height: 136px;" class=""></iframe></span></div><div class="fbhd">Thích trang để theo dõi trên Facebook</div></div><div class="sticky-holder" style="visibility: hidden;height:0;display:block"></div><div id="sticky" class="adbox" style="width: 300px;">
+					<!-- KhoaHoc 300x600 -->
+					<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-9275417305531302" data-ad-slot="9672107684" eoosf0x="" hidden=""></ins>
+					<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				</div>
+			</div>
+			<div class="leftbar">
+				<div class="navbox sidenav clearfix">
+					<div class="title" style="display:none">☰ Danh mục</div>
+					<ul id="leftnav" class="navigation clearfix">
+						<li class="l2 tax-cong-nghe-moi">
+							<a href="https://khoahoc.tv/cong-nghe-moi">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/robot.png">
+								Công nghệ mới
+							</a>
+						</li>
+						<li class="l2 tax-phan-mem">
+							<a href="https://khoahoc.tv/phan-mem">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/cursor.png">
+								Phần mềm hữu ích
+							</a>
+						</li>
+						<li class="l2 tax-may-tinh">
+							<a href="https://khoahoc.tv/may-tinh">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/laptop.png">
+								Khoa học máy tính
+							</a>
+						</li>
+						<li class="l2 tax-phat-minh">
+							<a href="https://khoahoc.tv/phat-minh">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/idea.png">
+								Phát minh khoa học
+							</a>
+						</li>
+						<li class="l2 tax-ai-tri-tue-nhan-tao">
+							<a href="https://khoahoc.tv/ai-tri-tue-nhan-tao">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/robot(1).png">
+								AI - Trí tuệ nhân tạo
+							</a>
+						</li>
+						<li class="l2 tax-kham-pha-khoa-hoc">
+							<a href="https://khoahoc.tv/kham-pha-khoa-hoc">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/science1.png">
+								Khám phá khoa học
+							</a>
+						</li>
+						<li class="l2 tax-sinh-vat-hoc">
+							<a href="https://khoahoc.tv/sinh-vat-hoc">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/microscope.png">
+								Sinh vật học
+							</a>
+						</li>
+						<li class="l2 tax-khao-co-hoc">
+							<a href="https://khoahoc.tv/khao-co-hoc">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/pharaoh.png">
+								Khảo cổ học
+							</a>
+						</li>
+						<li class="l2 tax-dai-duong-hoc">
+							<a href="https://khoahoc.tv/dai-duong-hoc">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/fish.png">
+								Đại dương học
+							</a>
+						</li>
+						<li class="l2 tax-the-gioi-dong-vat">
+							<a href="https://khoahoc.tv/the-gioi-dong-vat">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/elephant.png">
+								Thế giới động vật
+							</a>
+						</li>
+						<li class="l2 tax-danh-nhan-the-gioi">
+							<a href="https://khoahoc.tv/danh-nhan-the-gioi">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/guests.png">
+								Danh nhân thế giới
+							</a>
+						</li>
+						<li class="l2 tax-vu-tru">
+							<a href="https://khoahoc.tv/vu-tru">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/satellite.png">
+								Khoa học vũ trụ
+							</a>
+						</li>
+						<li class="l2 tax-1001-bi-an">
+							<a href="https://khoahoc.tv/1001-bi-an">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/alien.png">
+								1001 bí ẩn
+							</a>
+						</li>
+						<li class="l2 tax-ngay-tan-the">
+							<a href="https://khoahoc.tv/ngay-tan-the">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/death.png">
+								Ngày tận thế
+							</a>
+						</li>
+						<li class="l2 tax-chinh-phuc-sao-hoa">
+							<a href="https://khoahoc.tv/chinh-phuc-sao-hoa">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/mars.png">
+								Chinh phục sao Hỏa
+							</a>
+						</li>
+						<li class="l2 tax-di-san-the-gioi">
+							<a href="https://khoahoc.tv/di-san-the-gioi">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/pyramids1.png">
+								Di sản thế giới
+							</a>
+						</li>
+						<li class="l2 tax-nguoi-ngoai-hanh-tinh">
+							<a href="https://khoahoc.tv/nguoi-ngoai-hanh-tinh">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/ufo.png">
+								Người ngoài hành tinh
+							</a>
+						</li>
+						<li class="l2 tax-lich-su">
+							<a href="https://khoahoc.tv/lich-su">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/rewind-time.png">
+								Lịch sử
+							</a>
+						</li>
+						<li class="l2 tax-yhoc">
+							<a href="https://khoahoc.tv/yhoc">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/heart.png">
+								Y học - Sức khỏe
+							</a>
+						</li>
+						<li class="l2 tax-moi-truong">
+							<a href="https://khoahoc.tv/moi-truong">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/planet-earth.png">
+								Môi trường
+							</a>
+						</li>
+						<li class="l2 tax-benh-ung-thu">
+							<a href="https://khoahoc.tv/benh-ung-thu">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/ribbon.png">
+								Bệnh Ung thư
+							</a>
+						</li>
+						<li class="l2 tax-ung-dung">
+							<a href="https://khoahoc.tv/ung-dung">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/flask.png">
+								Ứng dụng khoa học
+							</a>
+						</li>
+						<li class="l2 tax-ban-doc-khoa-hoc">
+							<a href="https://khoahoc.tv/ban-doc-khoa-hoc">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/envelope.png">
+								Khoa học &amp; Bạn đọc
+							</a>
+						</li>
+						<li class="l2 tax-thu-vien-anh">
+							<a href="https://khoahoc.tv/thu-vien-anh">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/picture.png">
+								Thư viện ảnh
+							</a>
+						</li>
+						<li class="l2 tax-hai-huoc">
+							<a href="https://khoahoc.tv/hai-huoc">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/nerd.png">
+								Góc hài hước
+							</a>
+						</li>
+						<li class="l2 tax-video">
+							<a href="https://khoahoc.tv/video">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/video-player.png">
+								Video
+							</a>
+						</li>
+						<li class="l2 tax-cong-trinh">
+							<a href="https://khoahoc.tv/cong-trinh">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/landmark.png">
+								Công trình khoa học
+							</a>
+						</li>
+						<li class="l2 tax-cau-chuyen">
+							<a href="https://khoahoc.tv/cau-chuyen">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/Einstein.png">
+								Câu chuyện khoa học
+							</a>
+						</li>
+						<li class="l2 tax-su-kien-khoa-hoc">
+							<a href="https://khoahoc.tv/su-kien-khoa-hoc">
+								<img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/calendar1.png">
+								Sự kiện Khoa học
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="footer" class="clearfix">
+			<div class="info">
+				<a href="https://khoahoc.tv/">Trang chủ</a> .
+				<a href="https://khoahoc.tv/contact" rel="nofollow">Liên hệ</a>  .
+				<a href="https://www.facebook.com/khoahoc.tivi" target="_blank" rel="nofollow">Facebook</a> .
+
+			</div>
+			<div class="copyright">
+				Copyright © 2018 KhoaHoc.tv
+			</div>
+		</div>
+	</div>
+    <script src="~/Scripts/bundle.min.js" async=""></script>
+    <div id="overlay" class="overlay"></div><a id="scrolltop"></a><div class="pswp" tabindex="-1" role="dialog" aria-hidden="true"><div class="pswp__bg"></div><div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div><div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div></div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/trnHszv6jVd.html" style="border: none;"></iframe></div></div></div>
 </body>
 </html>

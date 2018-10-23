@@ -121,7 +121,6 @@ D:\TMDT\Do an\TMDT-BanKhoaHoc\TMDT_BanKhoaHoc\TMDT_BanKhoaHoc\bin\Microsoft.AI.D
 D:\TMDT\Do an\TMDT-BanKhoaHoc\TMDT_BanKhoaHoc\TMDT_BanKhoaHoc\bin\Microsoft.AI.WindowsServer.xml
 D:\TMDT\Do an\TMDT-BanKhoaHoc\TMDT_BanKhoaHoc\TMDT_BanKhoaHoc\bin\Microsoft.AI.Web.xml
 D:\TMDT\Do an\TMDT-BanKhoaHoc\TMDT_BanKhoaHoc\TMDT_BanKhoaHoc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\TMDT\Do an\TMDT-BanKhoaHoc\TMDT_BanKhoaHoc\TMDT_BanKhoaHoc\obj\Debug\TMDT_BanKhoaHoc.csprojAssemblyReference.cache
 D:\TMDT\Do an\TMDT-BanKhoaHoc\TMDT_BanKhoaHoc\TMDT_BanKhoaHoc\obj\Debug\TMDT_BanKhoaHoc.csproj.CoreCompileInputs.cache
 D:\TMDT\Do an\TMDT-BanKhoaHoc\TMDT_BanKhoaHoc\TMDT_BanKhoaHoc\obj\Debug\TMDT_BanKhoaHoc.csproj.CopyComplete
 D:\TMDT\Do an\TMDT-BanKhoaHoc\TMDT_BanKhoaHoc\TMDT_BanKhoaHoc\obj\Debug\TMDT_BanKhoaHoc.dll
