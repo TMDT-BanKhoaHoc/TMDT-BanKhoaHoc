@@ -8,9 +8,9 @@ namespace TMDT_BanKhoaHoc.Controllers
 {
     public class PartialController : Control
     {
-        public ActionResult ListMonHoc()
+        public ActionResult ListMonHoc(int soluong)
         {
-            var monhoc = db.MONHOCs.Take(10);
+            var monhoc = db.MONHOCs.Take(soluong);
 
             if(monhoc == null)
             {

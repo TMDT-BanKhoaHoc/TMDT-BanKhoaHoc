@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 using TMDT_BanKhoaHoc.Models;
 
 namespace TMDT_BanKhoaHoc.Controllers
@@ -33,11 +34,10 @@ namespace TMDT_BanKhoaHoc.Controllers
         }
 
         [HttpPost]
-        [ValidateInput(true)]
         [ValidateAntiForgeryToken]
         public ActionResult DangNhap(FormDangNhap form)
         {
-            if(ValidateRequest)
+            if(ModelState.IsValid)
             {
                 if (Session[SesHocVien] != null)
                 {
@@ -52,7 +52,7 @@ namespace TMDT_BanKhoaHoc.Controllers
                     ViewData["loi"] = "Tài khoản hoặc mật khẩu không đúng";
                     return View(form);
                 }
-
+                Session[SesHocVien] = hv;
                 return Redirect("/");
             }
             return View(form);
@@ -69,40 +69,49 @@ namespace TMDT_BanKhoaHoc.Controllers
         }
         
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult DangKy(HOCVIEN hocvien)
         {
             try
             {
-                if(Session[SesHocVien] != null)
+                if(ModelState.IsValid)
                 {
-                    return Redirect("/");
-                }
+                    if (Session[SesHocVien] != null)
+                    {
+                        return Redirect("/");
+                    }
 
-                HOCVIEN hv = db.HOCVIENs.SingleOrDefault(n => n.Taikhoan == hocvien.Taikhoan);
+                    HOCVIEN hv = db.HOCVIENs.SingleOrDefault(n => n.Taikhoan == hocvien.Taikhoan);
 
-                if(hv != null)
-                {
-                    ViewData["taikhoan"] = "Tài khoản đã được sử dụng";
-                    return View(hocvien);
-                }
+                    if (hv != null)
+                    {
+                        ViewData["taikhoan"] = "Tài khoản đã được sử dụng";
+                        return View(hocvien);
+                    }
 
-                if(hocvien.Email.IndexOf('@') > 0)
-                {
-                    string[] a = hocvien.Email.Split('@');
-                    if(a[1].IndexOf('.') < 1)
+                    if (hocvien.Email.IndexOf('@') > 0)
+                    {
+                        string[] a = hocvien.Email.Split('@');
+                        if (a[1].IndexOf('.') < 1)
+                        {
+                            ViewData["email"] = "Email không hợp lệ";
+                            return View(hocvien);
+                        }
+                    }
+                    else
                     {
                         ViewData["email"] = "Email không hợp lệ";
                         return View(hocvien);
                     }
+
+                    db.HOCVIENs.InsertOnSubmit(hocvien);
+                    db.SubmitChanges();
+
+                    return RedirectToAction(controllerName: "NguoiDung", actionName: "DangNhap");
                 } else
                 {
-                    ViewData["email"] = "Email không hợp lệ";
                     return View(hocvien);
                 }
-                    
-                db.HOCVIENs.InsertOnSubmit(hocvien);
-
-                return Redirect("/");
             }
             catch
             {

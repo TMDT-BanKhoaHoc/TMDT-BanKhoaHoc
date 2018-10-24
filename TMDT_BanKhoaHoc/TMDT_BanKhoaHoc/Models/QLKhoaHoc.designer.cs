@@ -20,7 +20,7 @@ namespace TMDT_BanKhoaHoc.Models
 	using System.Linq.Expressions;
 	using System.ComponentModel;
 	using System;
-    using System.ComponentModel.DataAnnotations;
+	using System.ComponentModel.DataAnnotations;
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QLKhoaHoc")]
 	public partial class QLKhoaHocDataContext : System.Data.Linq.DataContext
@@ -28,39 +28,39 @@ namespace TMDT_BanKhoaHoc.Models
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
 		
-    #region Extensibility Method Definitions
-    partial void OnCreated();
-    partial void InsertAdmin(Admin instance);
-    partial void UpdateAdmin(Admin instance);
-    partial void DeleteAdmin(Admin instance);
-    partial void InsertMONHOC(MONHOC instance);
-    partial void UpdateMONHOC(MONHOC instance);
-    partial void DeleteMONHOC(MONHOC instance);
-    partial void InsertBaiGiang(BaiGiang instance);
-    partial void UpdateBaiGiang(BaiGiang instance);
-    partial void DeleteBaiGiang(BaiGiang instance);
-    partial void InsertDAYHOC(DAYHOC instance);
-    partial void UpdateDAYHOC(DAYHOC instance);
-    partial void DeleteDAYHOC(DAYHOC instance);
-    partial void InsertDONDATHANG(DONDATHANG instance);
-    partial void UpdateDONDATHANG(DONDATHANG instance);
-    partial void DeleteDONDATHANG(DONDATHANG instance);
-    partial void InsertGIANGVIEN(GIANGVIEN instance);
-    partial void UpdateGIANGVIEN(GIANGVIEN instance);
-    partial void DeleteGIANGVIEN(GIANGVIEN instance);
-    partial void InsertHOCVIEN(HOCVIEN instance);
-    partial void UpdateHOCVIEN(HOCVIEN instance);
-    partial void DeleteHOCVIEN(HOCVIEN instance);
-    partial void InsertKHOAHOC(KHOAHOC instance);
-    partial void UpdateKHOAHOC(KHOAHOC instance);
-    partial void DeleteKHOAHOC(KHOAHOC instance);
-    partial void InsertKHUYENMAI(KHUYENMAI instance);
-    partial void UpdateKHUYENMAI(KHUYENMAI instance);
-    partial void DeleteKHUYENMAI(KHUYENMAI instance);
-    partial void InsertCHITIETDONTHANG(CHITIETDONTHANG instance);
-    partial void UpdateCHITIETDONTHANG(CHITIETDONTHANG instance);
-    partial void DeleteCHITIETDONTHANG(CHITIETDONTHANG instance);
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnCreated();
+	partial void InsertAdmin(Admin instance);
+	partial void UpdateAdmin(Admin instance);
+	partial void DeleteAdmin(Admin instance);
+	partial void InsertMONHOC(MONHOC instance);
+	partial void UpdateMONHOC(MONHOC instance);
+	partial void DeleteMONHOC(MONHOC instance);
+	partial void InsertBaiGiang(BaiGiang instance);
+	partial void UpdateBaiGiang(BaiGiang instance);
+	partial void DeleteBaiGiang(BaiGiang instance);
+	partial void InsertDAYHOC(DAYHOC instance);
+	partial void UpdateDAYHOC(DAYHOC instance);
+	partial void DeleteDAYHOC(DAYHOC instance);
+	partial void InsertDONDATHANG(DONDATHANG instance);
+	partial void UpdateDONDATHANG(DONDATHANG instance);
+	partial void DeleteDONDATHANG(DONDATHANG instance);
+	partial void InsertGIANGVIEN(GIANGVIEN instance);
+	partial void UpdateGIANGVIEN(GIANGVIEN instance);
+	partial void DeleteGIANGVIEN(GIANGVIEN instance);
+	partial void InsertHOCVIEN(HOCVIEN instance);
+	partial void UpdateHOCVIEN(HOCVIEN instance);
+	partial void DeleteHOCVIEN(HOCVIEN instance);
+	partial void InsertKHOAHOC(KHOAHOC instance);
+	partial void UpdateKHOAHOC(KHOAHOC instance);
+	partial void DeleteKHOAHOC(KHOAHOC instance);
+	partial void InsertKHUYENMAI(KHUYENMAI instance);
+	partial void UpdateKHUYENMAI(KHUYENMAI instance);
+	partial void DeleteKHUYENMAI(KHUYENMAI instance);
+	partial void InsertCHITIETDONTHANG(CHITIETDONTHANG instance);
+	partial void UpdateCHITIETDONTHANG(CHITIETDONTHANG instance);
+	partial void DeleteCHITIETDONTHANG(CHITIETDONTHANG instance);
+	#endregion
 		
 		public QLKhoaHocDataContext() : 
 				base(global::TMDT_BanKhoaHoc.Properties.Settings.Default.QLKhoaHocConnectionString, mappingSource)
@@ -179,32 +179,23 @@ namespace TMDT_BanKhoaHoc.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-        [Display(Name = "Tài khoản")]
-        [Required(ErrorMessage = "Tài khoản không được để trống")]
-        [StringLength(50,MinimumLength = 6 ,ErrorMessage = "Tài khoản phải có từ 6-50 ký tự")]
 		private string _TaiKhoan;
 
-        [Display(Name = "Mật khẩu")]
-        [Required(ErrorMessage = "Mật khẩu không được để trống")]
-        [StringLength(50, MinimumLength = 6, ErrorMessage = "Mật khẩu phải có từ 6-50 ký tự")]
-        private string _MatKhau;
+		private string _MatKhau;
 
-        [Display(Name = "Họ và tên")]
-        [Required(ErrorMessage = "Họ và tên không được để trống")]
-        [StringLength(50, MinimumLength = 6, ErrorMessage = "Họ và tên phải có từ 6-50 ký tự")]
-        private string _TenAdmin;
+		private string _TenAdmin;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnTaiKhoanChanging(string value);
-    partial void OnTaiKhoanChanged();
-    partial void OnMatKhauChanging(string value);
-    partial void OnMatKhauChanged();
-    partial void OnTenAdminChanging(string value);
-    partial void OnTenAdminChanged();
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnLoaded();
+	partial void OnValidate(System.Data.Linq.ChangeAction action);
+	partial void OnCreated();
+	partial void OnTaiKhoanChanging(string value);
+	partial void OnTaiKhoanChanged();
+	partial void OnMatKhauChanging(string value);
+	partial void OnMatKhauChanged();
+	partial void OnTenAdminChanging(string value);
+	partial void OnTenAdminChanged();
+	#endregion
 		
 		public Admin()
 		{
@@ -212,7 +203,11 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaiKhoan", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string TaiKhoan
+
+        [Display(Name = "Tài khoản")]
+        [Required(ErrorMessage = "Tài khoản không được để trống")]
+        [StringLength(50, MinimumLength = 6, ErrorMessage = "Tài khoản phải có từ 6-50 ký tự")]
+        public string TaiKhoan
 		{
 			get
 			{
@@ -232,7 +227,11 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatKhau", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string MatKhau
+
+        [Display(Name = "Mật khẩu")]
+        [Required(ErrorMessage = "Mật khẩu không được để trống")]
+        [StringLength(50, MinimumLength = 6, ErrorMessage = "Mật khẩu phải có từ 6-50 ký tự")]
+        public string MatKhau
 		{
 			get
 			{
@@ -252,7 +251,11 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenAdmin", DbType="NVarChar(50)")]
-		public string TenAdmin
+
+        [Display(Name = "Họ và tên")]
+        [Required(ErrorMessage = "Họ và tên không được để trống")]
+        [StringLength(50, MinimumLength = 6, ErrorMessage = "Họ và tên phải có từ 6-50 ký tự")]
+        public string TenAdmin
 		{
 			get
 			{
@@ -298,27 +301,23 @@ namespace TMDT_BanKhoaHoc.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 
-        [Display(Name = "Mã môn học")]
-        private int _MaMH;
+		private int _MaMH;
 
-        [Display(Name = "Tên môn học")]
-        [Required(ErrorMessage = "Tên môn học không được để trống")]
-        [StringLength(50, MinimumLength = 6, ErrorMessage = "Tên môn học phải có từ 6-50 ký tự")]
-        private string _TenMH;
+		private string _TenMH;
 		
 		private EntitySet<DAYHOC> _DAYHOCs;
 		
 		private EntitySet<KHOAHOC> _KHOAHOCs;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaMHChanging(int value);
-    partial void OnMaMHChanged();
-    partial void OnTenMHChanging(string value);
-    partial void OnTenMHChanged();
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnLoaded();
+	partial void OnValidate(System.Data.Linq.ChangeAction action);
+	partial void OnCreated();
+	partial void OnMaMHChanging(int value);
+	partial void OnMaMHChanged();
+	partial void OnTenMHChanging(string value);
+	partial void OnTenMHChanged();
+	#endregion
 		
 		public MONHOC()
 		{
@@ -328,7 +327,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaMH", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaMH
+
+        [Display(Name = "Mã môn học")]
+        public int MaMH
 		{
 			get
 			{
@@ -348,7 +349,11 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenMH", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string TenMH
+
+        [Display(Name = "Tên môn học")]
+        [Required(ErrorMessage = "Tên môn học không được để trống")]
+        [StringLength(50, MinimumLength = 6, ErrorMessage = "Tên môn học phải có từ 6-50 ký tự")]
+        public string TenMH
 		{
 			get
 			{
@@ -444,36 +449,29 @@ namespace TMDT_BanKhoaHoc.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-        [Display(Name = "Mã bài giảng")]
 		private int _MaBaiGiang;
 		
-        [Display(Name = "Mã khóa học")]
 		private int _MaKH;
 
-        [Display(Name = "Video")]
-        [Required(ErrorMessage = "Video không được để trống")]
-        [StringLength(150, ErrorMessage = "Video phải có từ 150 ký tự")]
-        private string _Video;
+		private string _Video;
 
-        [Display(Name = "Tóm tắt nội dung")]
-        [StringLength(512, ErrorMessage = "Tóm tắt nội dung tối đa 512 ký tự")]
-        private string _SoLuocNoiDung;
+		private string _SoLuocNoiDung;
 		
 		private EntityRef<KHOAHOC> _KHOAHOC;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaBaiGiangChanging(int value);
-    partial void OnMaBaiGiangChanged();
-    partial void OnMaKHChanging(int value);
-    partial void OnMaKHChanged();
-    partial void OnVideoChanging(string value);
-    partial void OnVideoChanged();
-    partial void OnSoLuocNoiDungChanging(string value);
-    partial void OnSoLuocNoiDungChanged();
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnLoaded();
+	partial void OnValidate(System.Data.Linq.ChangeAction action);
+	partial void OnCreated();
+	partial void OnMaBaiGiangChanging(int value);
+	partial void OnMaBaiGiangChanged();
+	partial void OnMaKHChanging(int value);
+	partial void OnMaKHChanged();
+	partial void OnVideoChanging(string value);
+	partial void OnVideoChanged();
+	partial void OnSoLuocNoiDungChanging(string value);
+	partial void OnSoLuocNoiDungChanged();
+	#endregion
 		
 		public BaiGiang()
 		{
@@ -482,7 +480,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaBaiGiang", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaBaiGiang
+
+        [Display(Name = "Mã bài giảng")]
+        public int MaBaiGiang
 		{
 			get
 			{
@@ -502,7 +502,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKH", DbType="Int NOT NULL")]
-		public int MaKH
+
+        [Display(Name = "Mã khóa học")]
+        public int MaKH
 		{
 			get
 			{
@@ -526,7 +528,11 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Video", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string Video
+
+        [Display(Name = "Video")]
+        [Required(ErrorMessage = "Video không được để trống")]
+        [StringLength(150, ErrorMessage = "Video không quá 150 ký tự")]
+        public string Video
 		{
 			get
 			{
@@ -546,7 +552,10 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuocNoiDung", DbType="NVarChar(512)")]
-		public string SoLuocNoiDung
+
+        [Display(Name = "Tóm tắt nội dung")]
+        [StringLength(512, ErrorMessage = "Tóm tắt nội dung không quá 512 ký tự")]
+        public string SoLuocNoiDung
 		{
 			get
 			{
@@ -566,7 +575,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHOAHOC_BaiGiang", Storage="_KHOAHOC", ThisKey="MaKH", OtherKey="MaKH", IsForeignKey=true)]
-		public KHOAHOC KHOAHOC
+
+        [Display(Name = "Khóa học")]
+        public KHOAHOC KHOAHOC
 		{
 			get
 			{
@@ -626,31 +637,27 @@ namespace TMDT_BanKhoaHoc.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-        [Display(Name = "Mã giảng viên")]
 		private int _MaGV;
 		
-        [Display(Name = "Mã môn học")]
 		private int _MaMH;
 		
-        [Display(Name = "Kinh nghiệm")]
-        [StringLength(1000, ErrorMessage = "Kinh nghiệm có tối đa 1000 ký tự")]
 		private string _KinhNghiem;
 		
 		private EntityRef<MONHOC> _MONHOC;
 		
 		private EntityRef<GIANGVIEN> _GIANGVIEN;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaGVChanging(int value);
-    partial void OnMaGVChanged();
-    partial void OnMaMHChanging(int value);
-    partial void OnMaMHChanged();
-    partial void OnKinhNghiemChanging(string value);
-    partial void OnKinhNghiemChanged();
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnLoaded();
+	partial void OnValidate(System.Data.Linq.ChangeAction action);
+	partial void OnCreated();
+	partial void OnMaGVChanging(int value);
+	partial void OnMaGVChanged();
+	partial void OnMaMHChanging(int value);
+	partial void OnMaMHChanged();
+	partial void OnKinhNghiemChanging(string value);
+	partial void OnKinhNghiemChanged();
+	#endregion
 		
 		public DAYHOC()
 		{
@@ -660,7 +667,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaGV", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MaGV
+
+        [Display(Name = "Mã giảng viên")]
+        public int MaGV
 		{
 			get
 			{
@@ -684,7 +693,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaMH", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MaMH
+
+        [Display(Name = "Mã môn học")]
+        public int MaMH
 		{
 			get
 			{
@@ -707,8 +718,11 @@ namespace TMDT_BanKhoaHoc.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KinhNghiem", DbType="NVarChar(50)")]
-		public string KinhNghiem
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KinhNghiem", DbType="NVarChar(1000)")]
+
+        [Display(Name = "Kinh nghiệm")]
+        [StringLength(1000, ErrorMessage = "Kinh nghiệm có tối đa 1000 ký tự")]
+        public string KinhNghiem
 		{
 			get
 			{
@@ -728,7 +742,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MONHOC_DAYHOC", Storage="_MONHOC", ThisKey="MaMH", OtherKey="MaMH", IsForeignKey=true)]
-		public MONHOC MONHOC
+
+        [Display(Name = "Môn học")]
+        public MONHOC MONHOC
 		{
 			get
 			{
@@ -762,7 +778,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GIANGVIEN_DAYHOC", Storage="_GIANGVIEN", ThisKey="MaGV", OtherKey="MaGV", IsForeignKey=true)]
-		public GIANGVIEN GIANGVIEN
+
+        [Display(Name = "Giảng viên")]
+        public GIANGVIEN GIANGVIEN
 		{
 			get
 			{
@@ -822,35 +840,31 @@ namespace TMDT_BanKhoaHoc.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 
-        [Display(Name = "Mã đơn hàng")]
-        private int _MaDonHang;
+		private int _MaDonHang;
 
-        [Display(Name = "Tình trạng thanh toán")]
-        private System.Nullable<bool> _Dathanhtoan;
+		private System.Nullable<bool> _Dathanhtoan;
 		
-        [Display(Name = "Ngày lập biên lai")]
 		private System.Nullable<System.DateTime> _Ngaydat;
 		
-        [Display(Name = "Mã học viên")]
 		private System.Nullable<int> _MaHV;
 		
 		private EntitySet<CHITIETDONTHANG> _CHITIETDONTHANGs;
 		
 		private EntityRef<HOCVIEN> _HOCVIEN;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaDonHangChanging(int value);
-    partial void OnMaDonHangChanged();
-    partial void OnDathanhtoanChanging(System.Nullable<bool> value);
-    partial void OnDathanhtoanChanged();
-    partial void OnNgaydatChanging(System.Nullable<System.DateTime> value);
-    partial void OnNgaydatChanged();
-    partial void OnMaHVChanging(System.Nullable<int> value);
-    partial void OnMaHVChanged();
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnLoaded();
+	partial void OnValidate(System.Data.Linq.ChangeAction action);
+	partial void OnCreated();
+	partial void OnMaDonHangChanging(int value);
+	partial void OnMaDonHangChanged();
+	partial void OnDathanhtoanChanging(System.Nullable<bool> value);
+	partial void OnDathanhtoanChanged();
+	partial void OnNgaydatChanging(System.Nullable<System.DateTime> value);
+	partial void OnNgaydatChanged();
+	partial void OnMaHVChanging(System.Nullable<int> value);
+	partial void OnMaHVChanged();
+	#endregion
 		
 		public DONDATHANG()
 		{
@@ -860,7 +874,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonHang", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaDonHang
+
+        [Display(Name = "Mã đơn hàng")]
+        public int MaDonHang
 		{
 			get
 			{
@@ -880,7 +896,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dathanhtoan", DbType="Bit")]
-		public System.Nullable<bool> Dathanhtoan
+
+        [Display(Name = "Tình trạng thanh toán")]
+        public System.Nullable<bool> Dathanhtoan
 		{
 			get
 			{
@@ -900,7 +918,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngaydat", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Ngaydat
+
+        [Display(Name = "Ngày lập biên lai")]
+        public System.Nullable<System.DateTime> Ngaydat
 		{
 			get
 			{
@@ -920,7 +940,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHV", DbType="Int")]
-		public System.Nullable<int> MaHV
+
+        [Display(Name = "Mã học viên")]
+        public System.Nullable<int> MaHV
 		{
 			get
 			{
@@ -957,7 +979,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HOCVIEN_DONDATHANG", Storage="_HOCVIEN", ThisKey="MaHV", OtherKey="MaHV", IsForeignKey=true)]
-		public HOCVIEN HOCVIEN
+
+        [Display(Name = "học viên")]
+        public HOCVIEN HOCVIEN
 		{
 			get
 			{
@@ -1029,47 +1053,45 @@ namespace TMDT_BanKhoaHoc.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-        [Display(Name = "Mã giảng viên")]
 		private int _MaGV;
 
-        [Display(Name = "Tên giảng viên")]
-        [Required(ErrorMessage = "Tên giảng viên không được để trống")]
-        [StringLength(50, MinimumLength = 6, ErrorMessage = "Tên giảng viên phải có từ {1}-{0} ký tự")]
-        private string _TenGV;
+		private string _TenGV;
 
-        [Display(Name = "Địa chỉ")]
-        [StringLength(100, ErrorMessage = "Địa chỉ giảng viên có tối đa {0} ký tự")]
-        private string _DiachiGV;
+		private string _DiachiGV;
 
-        [Display(Name = "Tiểu sử")]
-        [StringLength(4000, ErrorMessage = "Tiểu sử giảng viên có tối đa {0} ký tự")]
-        private string _Tieusu;
+		private string _Tieusu;
 
-        [Display(Name = "Số điện thoại")]
-        [StringLength(11, ErrorMessage = "Số điện thoại giảng viên có tối đa {0} ký tự")]
-        private string _Dienthoai;
+		private string _Dienthoai;
+
+        private string _TaiKhoan;
+
+        private string _MatKhau;
 		
 		private EntitySet<DAYHOC> _DAYHOCs;
 		
 		private EntitySet<KHOAHOC> _KHOAHOCs;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaGVChanging(int value);
-    partial void OnMaGVChanged();
-    partial void OnTenGVChanging(string value);
-    partial void OnTenGVChanged();
-    partial void OnDiachiGVChanging(string value);
-    partial void OnDiachiGVChanged();
-    partial void OnTieusuChanging(string value);
-    partial void OnTieusuChanged();
-    partial void OnDienthoaiChanging(string value);
-    partial void OnDienthoaiChanged();
-    #endregion
-		
-		public GIANGVIEN()
+	#region Extensibility Method Definitions
+	partial void OnLoaded();
+	partial void OnValidate(System.Data.Linq.ChangeAction action);
+	partial void OnCreated();
+	partial void OnMaGVChanging(int value);
+	partial void OnMaGVChanged();
+	partial void OnTenGVChanging(string value);
+	partial void OnTenGVChanged();
+	partial void OnDiachiGVChanging(string value);
+	partial void OnDiachiGVChanged();
+	partial void OnTieusuChanging(string value);
+	partial void OnTieusuChanged();
+	partial void OnDienthoaiChanging(string value);
+	partial void OnDienthoaiChanged();
+    partial void OnTaiKhoanChanging(string value);
+    partial void OnTaiKhoanChanged();
+    partial void OnMatKhauChanging(string value);
+    partial void OnMatKhauChanged();
+        #endregion
+
+        public GIANGVIEN()
 		{
 			this._DAYHOCs = new EntitySet<DAYHOC>(new Action<DAYHOC>(this.attach_DAYHOCs), new Action<DAYHOC>(this.detach_DAYHOCs));
 			this._KHOAHOCs = new EntitySet<KHOAHOC>(new Action<KHOAHOC>(this.attach_KHOAHOCs), new Action<KHOAHOC>(this.detach_KHOAHOCs));
@@ -1077,7 +1099,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaGV", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaGV
+
+        [Display(Name = "Mã giảng viên")]
+        public int MaGV
 		{
 			get
 			{
@@ -1097,7 +1121,11 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenGV", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string TenGV
+
+        [Display(Name = "Tên giảng viên")]
+        [Required(ErrorMessage = "Tên giảng viên không được để trống")]
+        [StringLength(50, MinimumLength = 6, ErrorMessage = "Tên giảng viên phải có từ 6-50 ký tự")]
+        public string TenGV
 		{
 			get
 			{
@@ -1117,7 +1145,10 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiachiGV", DbType="NVarChar(100)")]
-		public string DiachiGV
+
+        [Display(Name = "Địa chỉ")]
+        [StringLength(100, ErrorMessage = "Địa chỉ giảng viên có tối đa 100 ký tự")]
+        public string DiachiGV
 		{
 			get
 			{
@@ -1137,7 +1168,10 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tieusu", DbType="NVarChar(MAX)")]
-		public string Tieusu
+
+        [Display(Name = "Tiểu sử")]
+        [StringLength(4000, ErrorMessage = "Tiểu sử giảng viên có tối đa 4000 ký tự")]
+        public string Tieusu
 		{
 			get
 			{
@@ -1157,7 +1191,10 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dienthoai", DbType="VarChar(50)")]
-		public string Dienthoai
+
+        [Display(Name = "Số điện thoại")]
+        [StringLength(11, MinimumLength = 10, ErrorMessage = "Số điện thoại giảng viên có từ 10-11 ký tự")]
+        public string Dienthoai
 		{
 			get
 			{
@@ -1175,9 +1212,57 @@ namespace TMDT_BanKhoaHoc.Models
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GIANGVIEN_DAYHOC", Storage="_DAYHOCs", ThisKey="MaGV", OtherKey="MaGV")]
-		public EntitySet<DAYHOC> DAYHOCs
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_TaiKhoan", DbType = "NVarChar(20) NOT NULL")]
+
+        [Display(Name = "Tài khoản")]
+        [StringLength(20, MinimumLength = 10, ErrorMessage = "Tài khoản giảng viên có từ 10-11 ký tự")]
+        public string TaiKhoan
+        {
+            get
+            {
+                return this._TaiKhoan;
+            }
+            set
+            {
+                if ((this._TaiKhoan != value))
+                {
+                    this.OnTaiKhoanChanging(value);
+                    this.SendPropertyChanging();
+                    this._TaiKhoan = value;
+                    this.SendPropertyChanged("TaiKhoan");
+                    this.OnTaiKhoanChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_MatKhau", DbType = "NVarChar(20) NOT NULL")]
+
+        [Display(Name = "Mật khẩu")]
+        [StringLength(20, MinimumLength = 10, ErrorMessage = "Mật khẩu phải có từ 6-20 ký tự")]
+        public string MatKhau
+        {
+            get
+            {
+                return this._MatKhau;
+            }
+            set
+            {
+                if ((this._MatKhau != value))
+                {
+                    this.OnMatKhauChanging(value);
+                    this.SendPropertyChanging();
+                    this._MatKhau = value;
+                    this.SendPropertyChanged("MatKhau");
+                    this.OnMatKhauChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name="GIANGVIEN_DAYHOC", Storage="_DAYHOCs", ThisKey="MaGV", OtherKey="MaGV")]
+
+        [Display(Name = "Các môn học")]
+        public EntitySet<DAYHOC> DAYHOCs
 		{
 			get
 			{
@@ -1190,7 +1275,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GIANGVIEN_KHOAHOC", Storage="_KHOAHOCs", ThisKey="MaGV", OtherKey="MaGV")]
-		public EntitySet<KHOAHOC> KHOAHOCs
+
+        [Display(Name = "Các khóa học")]
+        public EntitySet<KHOAHOC> KHOAHOCs
 		{
 			get
 			{
@@ -1253,65 +1340,45 @@ namespace TMDT_BanKhoaHoc.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 
-        [Display(Name = "Mã học viên")]
-        private int _MaHV;
+		private int _MaHV;
 
-        [Display(Name = "Họ và tên")]
-        [Required(ErrorMessage = "Họ và tên không được để trống")]
-        [StringLength(50,MinimumLength = 6, ErrorMessage = "Họ và tên phải có từ {1}-{0} ký tự")]
-        private string _HoTen;
+		private string _HoTen;
 
-        [Display(Name = "Tài khoản")]
-        [Required(ErrorMessage = "Tài khoản không được để trống")]
-        [StringLength(50, MinimumLength = 6, ErrorMessage = "Tài khoản phải có từ {1}-{0} ký tự")]
-        private string _Taikhoan;
+		private string _Taikhoan;
 
-        [Display(Name = "Mật khẩu")]
-        [Required(ErrorMessage = "Mật khẩu không được để trống")]
-        [StringLength(50, MinimumLength = 6, ErrorMessage = "Mật khẩu phải có từ {1}-{0} ký tự")]
-        private string _Matkhau;
+		private string _Matkhau;
 
-        [Display(Name = "Email")]
-        [Required(ErrorMessage = "Email không được để trống")]
-        [StringLength(100, MinimumLength = 6, ErrorMessage = "Email phải có từ {1}-{0} ký tự")]
-        private string _Email;
+		private string _Email;
 
-        [Display(Name = "Địa chỉ")]
-        [Required(ErrorMessage = "Địa chỉ không được để trống")]
-        [StringLength(200, MinimumLength = 6, ErrorMessage = "Địa chỉ phải có từ {1}-{0} ký tự")]
-        private string _DiachiHV;
+		private string _DiachiHV;
 
-        [Display(Name = "Số điện thoại")]
-        [Required(ErrorMessage = "Số điện thoại không được để trống")]
-        [StringLength(11, MinimumLength = 10, ErrorMessage = "Số điện thoại phải có từ {1}-{0} ký tự")]
-        private string _DienthoaiHV;
+		private string _DienthoaiHV;
 		
-        [Display(Name = "Ngày sinh")]
 		private System.Nullable<System.DateTime> _Ngaysinh;
 		
 		private EntitySet<DONDATHANG> _DONDATHANGs;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaHVChanging(int value);
-    partial void OnMaHVChanged();
-    partial void OnHoTenChanging(string value);
-    partial void OnHoTenChanged();
-    partial void OnTaikhoanChanging(string value);
-    partial void OnTaikhoanChanged();
-    partial void OnMatkhauChanging(string value);
-    partial void OnMatkhauChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnDiachiHVChanging(string value);
-    partial void OnDiachiHVChanged();
-    partial void OnDienthoaiHVChanging(string value);
-    partial void OnDienthoaiHVChanged();
-    partial void OnNgaysinhChanging(System.Nullable<System.DateTime> value);
-    partial void OnNgaysinhChanged();
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnLoaded();
+	partial void OnValidate(System.Data.Linq.ChangeAction action);
+	partial void OnCreated();
+	partial void OnMaHVChanging(int value);
+	partial void OnMaHVChanged();
+	partial void OnHoTenChanging(string value);
+	partial void OnHoTenChanged();
+	partial void OnTaikhoanChanging(string value);
+	partial void OnTaikhoanChanged();
+	partial void OnMatkhauChanging(string value);
+	partial void OnMatkhauChanged();
+	partial void OnEmailChanging(string value);
+	partial void OnEmailChanged();
+	partial void OnDiachiHVChanging(string value);
+	partial void OnDiachiHVChanged();
+	partial void OnDienthoaiHVChanging(string value);
+	partial void OnDienthoaiHVChanged();
+	partial void OnNgaysinhChanging(System.Nullable<System.DateTime> value);
+	partial void OnNgaysinhChanged();
+	#endregion
 		
 		public HOCVIEN()
 		{
@@ -1320,6 +1387,8 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHV", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+
+		[Display(Name = "Mã học viên")]
 		public int MaHV
 		{
 			get
@@ -1340,6 +1409,11 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+
+
+		[Display(Name = "Họ và tên")]
+		[Required(ErrorMessage = "Họ và tên không được để trống")]
+		[StringLength(50, MinimumLength = 6, ErrorMessage = "Họ và tên phải có từ 6-50 ký tự")]
 		public string HoTen
 		{
 			get
@@ -1360,7 +1434,11 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Taikhoan", DbType="VarChar(50)")]
-		public string Taikhoan
+
+        [Display(Name = "Tài khoản")]
+        [Required(ErrorMessage = "Tài khoản không được để trống")]
+        [StringLength(50, MinimumLength = 6, ErrorMessage = "Tài khoản phải có từ 6-50 ký tự")]
+        public string Taikhoan
 		{
 			get
 			{
@@ -1380,7 +1458,11 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Matkhau", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Matkhau
+
+        [Display(Name = "Mật khẩu")]
+        [Required(ErrorMessage = "Mật khẩu không được để trống")]
+        [StringLength(50, MinimumLength = 6, ErrorMessage = "Mật khẩu phải có từ 6-50 ký tự")]
+        public string Matkhau
 		{
 			get
 			{
@@ -1400,7 +1482,11 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100)")]
-		public string Email
+
+        [Display(Name = "Email")]
+        [Required(ErrorMessage = "Email không được để trống")]
+        [StringLength(100, MinimumLength = 6, ErrorMessage = "Email phải có từ 6-100 ký tự")]
+        public string Email
 		{
 			get
 			{
@@ -1420,7 +1506,11 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiachiHV", DbType="NVarChar(200)")]
-		public string DiachiHV
+
+        [Display(Name = "Địa chỉ")]
+        [Required(ErrorMessage = "Địa chỉ không được để trống")]
+        [StringLength(200, MinimumLength = 6, ErrorMessage = "Địa chỉ phải có từ 6-200 ký tự")]
+        public string DiachiHV
 		{
 			get
 			{
@@ -1440,7 +1530,11 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DienthoaiHV", DbType="VarChar(50)")]
-		public string DienthoaiHV
+
+        [Display(Name = "Số điện thoại")]
+        [Required(ErrorMessage = "Số điện thoại không được để trống")]
+        [StringLength(11, MinimumLength = 10, ErrorMessage = "Số điện thoại phải có từ 10-11 ký tự")]
+        public string DienthoaiHV
 		{
 			get
 			{
@@ -1460,7 +1554,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngaysinh", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Ngaysinh
+
+        [Display(Name = "Ngày sinh")]
+        public System.Nullable<System.DateTime> Ngaysinh
 		{
 			get
 			{
@@ -1480,7 +1576,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HOCVIEN_DONDATHANG", Storage="_DONDATHANGs", ThisKey="MaHV", OtherKey="MaHV")]
-		public EntitySet<DONDATHANG> DONDATHANGs
+
+        [Display(Name = "Các biên lai")]
+        public EntitySet<DONDATHANG> DONDATHANGs
 		{
 			get
 			{
@@ -1531,27 +1629,15 @@ namespace TMDT_BanKhoaHoc.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 
-        [Display(Name = "Mã học viên")]
-        private int _MaKH;
+		private int _MaKH;
 
-        [Display(Name = "Tên khóa học")]
-        [Required(ErrorMessage = "Tên khóa học không được để trống")]
-        [StringLength(100, MinimumLength = 6, ErrorMessage = "Tên khóa học phải có từ {1}-{0} ký tự")]
-        private string _TenKH;
+		private string _TenKH;
 
-        [Display(Name = "Học phí")]
-        [Required(ErrorMessage = "Chưa nhập học phí")]
-        private System.Nullable<int> _HocPhi;
+		private System.Nullable<int> _HocPhi;
 
-        [Display(Name = "Mô tả")]
-        [Required(ErrorMessage = "Mô tả không được để trống")]
-        [StringLength(4000, ErrorMessage = "Mô tả không được quá {0} ký tự")]
-        private string _Mota;
+		private string _Mota;
 
-        [Display(Name = "Ảnh bìa")]
-        [Required(ErrorMessage = "Ảnh bìa không được để trống")]
-        [StringLength(50, ErrorMessage = "Ảnh bìa không được quá {0} ký tự")]
-        private string _Anhbia;
+		private string _Anhbia;
 		
 		private System.Nullable<System.DateTime> _Ngaycapnhat;
 		
@@ -1571,31 +1657,31 @@ namespace TMDT_BanKhoaHoc.Models
 		
 		private EntityRef<MONHOC> _MONHOC;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaKHChanging(int value);
-    partial void OnMaKHChanged();
-    partial void OnTenKHChanging(string value);
-    partial void OnTenKHChanged();
-    partial void OnHocPhiChanging(System.Nullable<decimal> value);
-    partial void OnHocPhiChanged();
-    partial void OnMotaChanging(string value);
-    partial void OnMotaChanged();
-    partial void OnAnhbiaChanging(string value);
-    partial void OnAnhbiaChanged();
-    partial void OnNgaycapnhatChanging(System.Nullable<System.DateTime> value);
-    partial void OnNgaycapnhatChanged();
-    partial void OnMaGVChanging(System.Nullable<int> value);
-    partial void OnMaGVChanged();
-    partial void OnNgayDuyetChanging(System.Nullable<System.DateTime> value);
-    partial void OnNgayDuyetChanged();
-    partial void OnKetQuaDuyetChanging(System.Nullable<bool> value);
-    partial void OnKetQuaDuyetChanged();
-    partial void OnMaMHChanging(System.Nullable<int> value);
-    partial void OnMaMHChanged();
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnLoaded();
+	partial void OnValidate(System.Data.Linq.ChangeAction action);
+	partial void OnCreated();
+	partial void OnMaKHChanging(int value);
+	partial void OnMaKHChanged();
+	partial void OnTenKHChanging(string value);
+	partial void OnTenKHChanged();
+	partial void OnHocPhiChanging(System.Nullable<decimal> value);
+	partial void OnHocPhiChanged();
+	partial void OnMotaChanging(string value);
+	partial void OnMotaChanged();
+	partial void OnAnhbiaChanging(string value);
+	partial void OnAnhbiaChanged();
+	partial void OnNgaycapnhatChanging(System.Nullable<System.DateTime> value);
+	partial void OnNgaycapnhatChanged();
+	partial void OnMaGVChanging(System.Nullable<int> value);
+	partial void OnMaGVChanged();
+	partial void OnNgayDuyetChanging(System.Nullable<System.DateTime> value);
+	partial void OnNgayDuyetChanged();
+	partial void OnKetQuaDuyetChanging(System.Nullable<bool> value);
+	partial void OnKetQuaDuyetChanged();
+	partial void OnMaMHChanging(System.Nullable<int> value);
+	partial void OnMaMHChanged();
+	#endregion
 		
 		public KHOAHOC()
 		{
@@ -1607,7 +1693,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKH", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaKH
+
+        [Display(Name = "Mã khóa học")]
+        public int MaKH
 		{
 			get
 			{
@@ -1627,7 +1715,11 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenKH", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string TenKH
+
+        [Display(Name = "Tên khóa học")]
+        [Required(ErrorMessage = "Tên khóa học không được để trống")]
+        [StringLength(100, MinimumLength = 6, ErrorMessage = "Tên khóa học phải có từ {1}-{0} ký tự")]
+        public string TenKH
 		{
 			get
 			{
@@ -1646,8 +1738,11 @@ namespace TMDT_BanKhoaHoc.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HocPhi", DbType="Decimal(18,0)")]
-		public System.Nullable<int> HocPhi
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HocPhi", DbType="Int")]
+
+        [Display(Name = "Học phí")]
+        [Required(ErrorMessage = "Chưa nhập học phí")]
+        public System.Nullable<int> HocPhi
 		{
 			get
 			{
@@ -1667,7 +1762,11 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mota", DbType="NVarChar(MAX)")]
-		public string Mota
+
+        [Display(Name = "Mô tả")]
+        [Required(ErrorMessage = "Mô tả không được để trống")]
+        [StringLength(4000, ErrorMessage = "Mô tả không được quá {0} ký tự")]
+        public string Mota
 		{
 			get
 			{
@@ -1687,7 +1786,11 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Anhbia", DbType="VarChar(50)")]
-		public string Anhbia
+
+        [Display(Name = "Ảnh bìa")]
+        [Required(ErrorMessage = "Ảnh bìa không được để trống")]
+        [StringLength(50, ErrorMessage = "Ảnh bìa không được quá {0} ký tự")]
+        public string Anhbia
 		{
 			get
 			{
@@ -1707,7 +1810,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngaycapnhat", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Ngaycapnhat
+
+        [Display(Name = "Ngày cập nhật")]
+        public System.Nullable<System.DateTime> Ngaycapnhat
 		{
 			get
 			{
@@ -1727,7 +1832,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaGV", DbType="Int")]
-		public System.Nullable<int> MaGV
+
+        [Display(Name = "Mã giảng viên")]
+        public System.Nullable<int> MaGV
 		{
 			get
 			{
@@ -1751,7 +1858,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayDuyet", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NgayDuyet
+
+        [Display(Name = "Ngày duyệt")]
+        public System.Nullable<System.DateTime> NgayDuyet
 		{
 			get
 			{
@@ -1771,7 +1880,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KetQuaDuyet", DbType="Bit")]
-		public System.Nullable<bool> KetQuaDuyet
+
+        [Display(Name = "Kết quả duyệt")]
+        public System.Nullable<bool> KetQuaDuyet
 		{
 			get
 			{
@@ -1791,7 +1902,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaMH", DbType="Int")]
-		public System.Nullable<int> MaMH
+
+        [Display(Name = "Mã khách hàng")]
+        public System.Nullable<int> MaMH
 		{
 			get
 			{
@@ -1815,7 +1928,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHOAHOC_BaiGiang", Storage="_BaiGiangs", ThisKey="MaKH", OtherKey="MaKH")]
-		public EntitySet<BaiGiang> BaiGiangs
+
+        [Display(Name = "Các bài giảng")]
+        public EntitySet<BaiGiang> BaiGiangs
 		{
 			get
 			{
@@ -1828,7 +1943,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHOAHOC_CHITIETDONTHANG", Storage="_CHITIETDONTHANGs", ThisKey="MaKH", OtherKey="MaKH")]
-		public EntitySet<CHITIETDONTHANG> CHITIETDONTHANGs
+
+        [Display(Name = "Các đơn hàng")]
+        public EntitySet<CHITIETDONTHANG> CHITIETDONTHANGs
 		{
 			get
 			{
@@ -1841,7 +1958,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GIANGVIEN_KHOAHOC", Storage="_GIANGVIEN", ThisKey="MaGV", OtherKey="MaGV", IsForeignKey=true)]
-		public GIANGVIEN GIANGVIEN
+
+        [Display(Name = "Giảng viên")]
+        public GIANGVIEN GIANGVIEN
 		{
 			get
 			{
@@ -1875,7 +1994,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MONHOC_KHOAHOC", Storage="_MONHOC", ThisKey="MaMH", OtherKey="MaMH", IsForeignKey=true)]
-		public MONHOC MONHOC
+
+        [Display(Name = "Môn học")]
+        public MONHOC MONHOC
 		{
 			get
 			{
@@ -1959,23 +2080,21 @@ namespace TMDT_BanKhoaHoc.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-        [Display(Name = "Mã giảm giá")]
 		private string _Code;
 		
-        [Display(Name = "Số tiền giảm")]
 		private int _TienGiam;
 		
 		private EntitySet<CHITIETDONTHANG> _CHITIETDONTHANGs;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCodeChanging(string value);
-    partial void OnCodeChanged();
-    partial void OnTienGiamChanging(int value);
-    partial void OnTienGiamChanged();
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnLoaded();
+	partial void OnValidate(System.Data.Linq.ChangeAction action);
+	partial void OnCreated();
+	partial void OnCodeChanging(string value);
+	partial void OnCodeChanged();
+	partial void OnTienGiamChanging(int value);
+	partial void OnTienGiamChanged();
+	#endregion
 		
 		public KHUYENMAI()
 		{
@@ -1983,8 +2102,10 @@ namespace TMDT_BanKhoaHoc.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Code", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Code
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Code", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+
+        [Display(Name = "Mã giảm giá")]
+        public string Code
 		{
 			get
 			{
@@ -2004,7 +2125,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TienGiam", DbType="Int NOT NULL")]
-		public int TienGiam
+
+        [Display(Name = "Số tiền giảm")]
+        public int TienGiam
 		{
 			get
 			{
@@ -2075,14 +2198,10 @@ namespace TMDT_BanKhoaHoc.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-        [Display(Name = "Mã đơn giản")]
 		private int _MaDonHang;
 		
-        [Display(Name = "Mã giảm giá")]
-        [StringLength(10,MinimumLength = 10, ErrorMessage = "Mã giảm giá phải có {0} ký tự")]
 		private string _CodeKhuyenMai;
 		
-        [Display(Name = "Mã khách hàng")]
 		private int _MaKH;
 		
 		private EntityRef<DONDATHANG> _DONDATHANG;
@@ -2091,17 +2210,17 @@ namespace TMDT_BanKhoaHoc.Models
 		
 		private EntityRef<KHUYENMAI> _KHUYENMAI;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaDonHangChanging(int value);
-    partial void OnMaDonHangChanged();
-    partial void OnCodeKhuyenMaiChanging(string value);
-    partial void OnCodeKhuyenMaiChanged();
-    partial void OnMaKHChanging(int value);
-    partial void OnMaKHChanged();
-    #endregion
+	#region Extensibility Method Definitions
+	partial void OnLoaded();
+	partial void OnValidate(System.Data.Linq.ChangeAction action);
+	partial void OnCreated();
+	partial void OnMaDonHangChanging(int value);
+	partial void OnMaDonHangChanged();
+	partial void OnCodeKhuyenMaiChanging(string value);
+	partial void OnCodeKhuyenMaiChanged();
+	partial void OnMaKHChanging(int value);
+	partial void OnMaKHChanged();
+	#endregion
 		
 		public CHITIETDONTHANG()
 		{
@@ -2112,7 +2231,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonHang", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MaDonHang
+
+        [Display(Name = "Mã đơn hàng")]
+        public int MaDonHang
 		{
 			get
 			{
@@ -2135,8 +2256,11 @@ namespace TMDT_BanKhoaHoc.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeKhuyenMai", DbType="NChar(10)")]
-		public string CodeKhuyenMai
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeKhuyenMai", DbType="Char(10)")]
+
+        [Display(Name = "Mã giảm giá")]
+        [StringLength(10, MinimumLength = 10, ErrorMessage = "Mã giảm giá phải có 10 ký tự")]
+        public string CodeKhuyenMai
 		{
 			get
 			{
@@ -2160,7 +2284,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKH", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MaKH
+
+        [Display(Name = "Mã khách hàng")]
+        public int MaKH
 		{
 			get
 			{
@@ -2184,7 +2310,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DONDATHANG_CHITIETDONTHANG", Storage="_DONDATHANG", ThisKey="MaDonHang", OtherKey="MaDonHang", IsForeignKey=true)]
-		public DONDATHANG DONDATHANG
+
+        [Display(Name = "Các đơn hàng")]
+        public DONDATHANG DONDATHANG
 		{
 			get
 			{
@@ -2218,7 +2346,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHOAHOC_CHITIETDONTHANG", Storage="_KHOAHOC", ThisKey="MaKH", OtherKey="MaKH", IsForeignKey=true)]
-		public KHOAHOC KHOAHOC
+
+        [Display(Name = "Khóa học")]
+        public KHOAHOC KHOAHOC
 		{
 			get
 			{
@@ -2252,7 +2382,9 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHUYENMAI_CHITIETDONTHANG", Storage="_KHUYENMAI", ThisKey="CodeKhuyenMai", OtherKey="Code", IsForeignKey=true)]
-		public KHUYENMAI KHUYENMAI
+
+        [Display(Name = "Khuyến mãi")]
+        public KHUYENMAI KHUYENMAI
 		{
 			get
 			{

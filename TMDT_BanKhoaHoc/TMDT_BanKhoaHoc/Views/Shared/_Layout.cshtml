@@ -1,181 +1,182 @@
-﻿<!DOCTYPE html>
+﻿@using TMDT_BanKhoaHoc.Models
+<!DOCTYPE html>
 <!-- saved from url=(0019)https://khoahoc.tv/ -->
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>@ViewBag.Title - Bán khóa học</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="~/Content/CSS.css" rel="stylesheet" />
-	@Scripts.Render("~/bundles/jquery")
-	@Scripts.Render("~/bundles/bootstrap")
-	@RenderSection("scripts", required: false)
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>@ViewBag.Title - Bán khóa học</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/CSS.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 
-	<script id="google-apis" async="" src="~/Scripts/platform.js" gapi_processed="true"></script>
-	<script id="facebook-jssdk" src="~/Scripts/sdk.js"></script>
-	<script async="" src="~/Scripts/analytics.js"></script>
-	<script async="" src="~/Scripts/f.js"></script>
-	<script>
-		(adsbygoogle = window.adsbygoogle || []).push({
-			google_ad_client: "ca-pub-9275417305531302",
-			enable_page_level_ads: true
-		});</script>
-	<!--[if IE 6]>
-	 <link href="/themes/default/theme.ie.min.css" rel="stylesheet" />
-	<![endif]-->
-	<meta name="apple-mobile-web-app-title" content="KhoaHoc.tv">
-	<meta name="application-name" content="KhoaHoc.tv">
-	<link rel="apple-touch-icon" href="https://khoahoc.tv/favicon.192.png">
-	<link rel="icon" sizes="192x192" href="https://khoahoc.tv/favicon.192.png">
+    <script id="google-apis" async="" src="~/Scripts/platform.js" gapi_processed="true"></script>
+    <script id="facebook-jssdk" src="~/Scripts/sdk.js"></script>
+    <script async="" src="~/Scripts/analytics.js"></script>
+    <script async="" src="~/Scripts/f.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-9275417305531302",
+            enable_page_level_ads: true
+        });</script>
+    <!--[if IE 6]>
+     <link href="/themes/default/theme.ie.min.css" rel="stylesheet" />
+    <![endif]-->
+    <meta name="apple-mobile-web-app-title" content="KhoaHoc.tv">
+    <meta name="application-name" content="KhoaHoc.tv">
+    <link rel="apple-touch-icon" href="https://khoahoc.tv/favicon.192.png">
+    <link rel="icon" sizes="192x192" href="https://khoahoc.tv/favicon.192.png">
 
-	<link href="~/Content/content.css" rel="stylesheet" />
-	<script type="text/javascript" src="~/Scripts/f(1).js"></script>
+    <link href="~/Content/content.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/f(1).js"></script>
 </head>
 <body class="showheader">
-	<script src="~/Scripts/script1.js"></script>
-	<div id="page">
-		<div id="header" class="clearfix">
-			<div class="headerleft"><a href="/" id="logo" title="KhoaHoc.tv">KhoaHoc.tv</a></div>
-			<div id="searchBox">
+    <script src="~/Scripts/script1.js"></script>
+    <div id="page">
+        <div id="header" class="clearfix">
+            <div class="headerleft"><a href="/" id="logo" title="KhoaHoc.tv">KhoaHoc.tv</a></div>
+            <div id="searchBox">
 
-				<form action="https://khoahoc.tv/g" id="cse-search-box">
-					<input class="q" type="text" name="q" size="55" placeholder="Tìm kiếm Tùy Chỉnh" style="border: 1px solid rgb(126, 157, 185); padding: 2px; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px;">
-					<input class="asearch" type="submit" name="sa" value="Search">
+                <form action="https://khoahoc.tv/g" id="cse-search-box">
+                    <input class="q" type="text" name="q" size="55" placeholder="Tìm kiếm Tùy Chỉnh" style="border: 1px solid rgb(126, 157, 185); padding: 2px; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px;">
+                    <input class="asearch" type="submit" name="sa" value="Search">
 
-					<input name="siteurl" type="hidden" value="khoahoc.tv/"><input name="ref" type="hidden" value="www.google.com.vn/"><input name="ss" type="hidden" value="">
-				</form>
-			</div><a class="toggle menu"></a>
-			<a class="toggle search"></a>
-		</div>
-		<div id="mainmenu" class="clearfix">
-			<ul id="topnav" class="navigation clearfix">
-				<li class="item all">
-					<a href="/"><img src="./KhoaHoc.tv_ Khoa học - Công nghệ - Tri Thức - Khám phá_files/home.png"> Trang chủ</a>
-
-				</li>
-				<li class="item  tax-cong-nghe">
-					<a href="https://khoahoc.tv/cong-nghe">
-						Công nghệ
-					</a>
-				</li>
-				<li class="item  tax-doi-song">
-					<a href="https://khoahoc.tv/doi-song">
-						Đời sống
-					</a>
-				</li>
-				<li class="item  tax-kham-pha-khoa-hoc">
-					<a href="https://khoahoc.tv/kham-pha-khoa-hoc">
-						Khám phá khoa học
-					</a>
-				</li>
-				<li class="item  tax-vu-tru">
-					<a href="https://khoahoc.tv/vu-tru">
-						Khoa học vũ trụ
-					</a>
-				</li>
-				<li class="item  tax-1001-bi-an">
-					<a href="https://khoahoc.tv/1001-bi-an">
-						1001 bí ẩn
-					</a>
-				</li>
-				<li class="item  tax-yhoc">
-					<a href="https://khoahoc.tv/yhoc">
-						Y học - Sức khỏe
-					</a>
-				</li>
+                    <input name="siteurl" type="hidden" value="khoahoc.tv/"><input name="ref" type="hidden" value="www.google.com.vn/"><input name="ss" type="hidden" value="">
+                </form>
+            </div><a class="toggle menu"></a>
+            <a class="toggle search"></a>
+        </div>
+        <div id="mainmenu" class="clearfix">
+            <ul id="topnav" class="navigation clearfix">
                 <li class="item tax-dangnhap">
-                    <a href="@Url.Action(controllerName: "NguoiDung", actionName: "DangNhap")">
-                        Đăng nhập
+                    <a href="/">
+                        Trang chủ
                     </a>
                 </li>
-			</ul>
-		</div>
+                @Html.Action(controllerName: "Partial", actionName: "ListMonHoc", routeValues: new { soluong = 7 })
+                @if (Session["HocVien"] == null)
+                {
+
+                    <li style="float: right" class="item tax-dangky">
+                        <a href="@Url.Action(controllerName: "NguoiDung", actionName: "DangKy")">
+                            Đăng ký
+                        </a>
+                    </li>
+                    <li style="float: right" class="item tax-dangnhap">
+                        <a href="@Url.Action(controllerName: "NguoiDung", actionName: "DangNhap")">
+                            Đăng nhập
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    HOCVIEN hocvien = (HOCVIEN)Session["HocVien"];
+
+                    <li style="float: right" class="item tax-dangky">
+                        <a href="@Url.Action(controllerName: "NguoiDung", actionName: "DangKy")">
+                            Đăng xuất
+                        </a>
+                    </li>
+                    <li style="float: right" class="item tax-dangnhap">
+                        <a href="/">
+                            Xin chào @hocvien.HoTen
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
 
 
-		<div id="main" class="indexpage clearfix">
-			<div class="content">
-				@RenderBody()
-			</div>
-			<div class="sidebar">
-				<div id="adrighttop" class="adbox">
-					<div id="adsense_right">
-						<!-- KH-300x250 -->
-						<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-9275417305531302" data-ad-slot="3791346881" eoosf0x="" hidden=""></ins>
-						<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-					</div>
-					<div style="margin:10px 0">
-						<!-- KhoaHoc Links 200x90 -->
-						<ins class="adsbygoogle" style="display:inline-block;width:200px;height:90px" data-ad-client="ca-pub-9275417305531302" data-ad-slot="5571326089" eoosf0x="" hidden=""></ins>
-						<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-					</div>
-				</div>
-				<div class="listbox highlight">
-					<div class="list-title">Giảng viên</div>
-					<ul>
-						@Html.Action(controllerName: "Partial", actionName: "ListGiangVien")
-					</ul>
-				</div>
-				<link href="~/Content/content1.css" rel="stylesheet" />
-				
-			</div>
-			<div class="leftbar">
-				<div class="navbox sidenav clearfix">
-					<div class="title" style="display:none">☰ Danh mục</div>
-					<ul id="leftnav" class="navigation clearfix">
-						@Html.Action(controllerName: "Partial", actionName: "ListMonHoc")
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div id="footer" class="clearfix">
-			<div class="info">
-				<a href="https://khoahoc.tv/">Trang chủ</a> .
-				<a href="https://khoahoc.tv/contact" rel="nofollow">Liên hệ</a>  .
-				<a href="https://www.facebook.com/khoahoc.tivi" target="_blank" rel="nofollow">Facebook</a> .
+        <div id="main" class="indexpage clearfix">
+            <div class="content">
+                @RenderBody()
+            </div>
+            <div class="sidebar">
+                <div id="adrighttop" class="adbox">
+                    <div id="adsense_right">
+                        <!-- KH-300x250 -->
+                        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-9275417305531302" data-ad-slot="3791346881" eoosf0x="" hidden=""></ins>
+                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                    </div>
+                    <div style="margin:10px 0">
+                        <!-- KhoaHoc Links 200x90 -->
+                        <ins class="adsbygoogle" style="display:inline-block;width:200px;height:90px" data-ad-client="ca-pub-9275417305531302" data-ad-slot="5571326089" eoosf0x="" hidden=""></ins>
+                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                    </div>
+                </div>
+                <div class="listbox highlight">
+                    <div class="list-title">Giảng viên</div>
+                    <ul>
+                        @Html.Action(controllerName: "Partial", actionName: "ListGiangVien")
+                    </ul>
+                </div>
+                <link href="~/Content/content1.css" rel="stylesheet" />
 
-			</div>
-			<div class="copyright">
-				Copyright © 2018 KhoaHoc.tv
-			</div>
-		</div>
-	</div>
-	<script src="~/Scripts/bundle.min.js" async=""></script>
-	<div id="overlay" class="overlay">
-		</div><a id="scrolltop"></a>
-	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="pswp__bg"></div>
-	<div class="pswp__scroll-wrap">
-		<div class="pswp__container">
-			<div class="pswp__item"></div>
-			<div class="pswp__item"></div><div class="pswp__item"></div>
-		</div>
-		<div class="pswp__ui pswp__ui--hidden">
-		<div class="pswp__top-bar"><div class="pswp__counter"></div>
-			<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-			<button class="pswp__button pswp__button--share" title="Share"></button>
-			<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-			<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-			<div class="pswp__preloader">
-				<div class="pswp__preloader__icn">
-					<div class="pswp__preloader__cut">
-						<div class="pswp__preloader__donut"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-			<div class="pswp__share-tooltip"></div>
-		</div>
-			<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-			<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-		<div class="pswp__caption">
-			<div class="pswp__caption__center"></div>
-		</div></div></div></div>
-	<div id="fb-root" class=" fb_reset">
-	<div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div>
-	<div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
-		<div>
-		</div>
-		</div>
-	</div>
+            </div>
+            <div class="leftbar">
+                <div class="navbox sidenav clearfix">
+                    <div class="title" style="display:none">☰ Danh mục</div>
+                    <ul id="leftnav" class="navigation clearfix">
+                        @Html.Action(controllerName: "Partial", actionName: "ListMonHoc", routeValues: new { soluong = 10 })
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="clearfix">
+            <div class="info">
+                <a href="https://khoahoc.tv/">Trang chủ</a> .
+                <a href="https://khoahoc.tv/contact" rel="nofollow">Liên hệ</a>  .
+                <a href="https://www.facebook.com/khoahoc.tivi" target="_blank" rel="nofollow">Facebook</a> .
+
+            </div>
+            <div class="copyright">
+                Copyright © 2018 KhoaHoc.tv
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/bundle.min.js" async=""></script>
+    <div id="overlay" class="overlay">
+    </div><a id="scrolltop"></a>
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div><div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="fb-root" class=" fb_reset">
+        <div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div>
+        <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
+            <div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
