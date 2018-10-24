@@ -125,3 +125,4 @@ D:\TMDT\Do an\TMDT-BanKhoaHoc\TMDT_BanKhoaHoc\TMDT_BanKhoaHoc\obj\Debug\TMDT_Ban
 D:\TMDT\Do an\TMDT-BanKhoaHoc\TMDT_BanKhoaHoc\TMDT_BanKhoaHoc\obj\Debug\TMDT_BanKhoaHoc.csproj.CopyComplete
 D:\TMDT\Do an\TMDT-BanKhoaHoc\TMDT_BanKhoaHoc\TMDT_BanKhoaHoc\obj\Debug\TMDT_BanKhoaHoc.dll
 D:\TMDT\Do an\TMDT-BanKhoaHoc\TMDT_BanKhoaHoc\TMDT_BanKhoaHoc\obj\Debug\TMDT_BanKhoaHoc.pdb
+D:\TMDT\Do an\TMDT-BanKhoaHoc\TMDT_BanKhoaHoc\TMDT_BanKhoaHoc\obj\Debug\TMDT_BanKhoaHoc.csprojAssemblyReference.cache

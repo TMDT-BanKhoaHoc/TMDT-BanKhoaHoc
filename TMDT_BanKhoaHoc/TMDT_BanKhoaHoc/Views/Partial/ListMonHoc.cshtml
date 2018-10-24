@@ -1,0 +1,16 @@
+﻿@model IEnumerable<TMDT_BanKhoaHoc.Models.MONHOC>
+@{ 
+    Layout = null;
+}
+
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <li class="12">
+            <a href="/">
+                @item.TenMH
+            </a>
+        </li>
+    }
+}

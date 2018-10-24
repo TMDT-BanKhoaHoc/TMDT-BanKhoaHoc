@@ -24,14 +24,6 @@
       <Association Name="KHOAHOC_BaiGiang" Member="KHOAHOC" ThisKey="MaKH" OtherKey="MaKH" Type="KHOAHOC" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.CHITIETDONTHANG" Member="CHITIETDONTHANGs">
-    <Type Name="CHITIETDONTHANG">
-      <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="DONDATHANG_CHITIETDONTHANG" Member="DONDATHANG" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="DONDATHANG" IsForeignKey="true" />
-      <Association Name="KHOAHOC_CHITIETDONTHANG" Member="KHOAHOC" ThisKey="MaKH" OtherKey="MaKH" Type="KHOAHOC" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.DAYHOC" Member="DAYHOCs">
     <Type Name="DAYHOC">
       <Column Name="MaGV" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -91,6 +83,23 @@
       <Association Name="KHOAHOC_CHITIETDONTHANG" Member="CHITIETDONTHANGs" ThisKey="MaKH" OtherKey="MaKH" Type="CHITIETDONTHANG" />
       <Association Name="GIANGVIEN_KHOAHOC" Member="GIANGVIEN" ThisKey="MaGV" OtherKey="MaGV" Type="GIANGVIEN" IsForeignKey="true" />
       <Association Name="MONHOC_KHOAHOC" Member="MONHOC" ThisKey="MaMH" OtherKey="MaMH" Type="MONHOC" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHUYENMAI" Member="KHUYENMAIs">
+    <Type Name="KHUYENMAI">
+      <Column Name="Code" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TienGiam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="KHUYENMAI_CHITIETDONTHANG" Member="CHITIETDONTHANGs" ThisKey="Code" OtherKey="CodeKhuyenMai" Type="CHITIETDONTHANG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CHITIETDONTHANG" Member="CHITIETDONTHANGs">
+    <Type Name="CHITIETDONTHANG">
+      <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodeKhuyenMai" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="DONDATHANG_CHITIETDONTHANG" Member="DONDATHANG" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="DONDATHANG" IsForeignKey="true" />
+      <Association Name="KHOAHOC_CHITIETDONTHANG" Member="KHOAHOC" ThisKey="MaKH" OtherKey="MaKH" Type="KHOAHOC" IsForeignKey="true" />
+      <Association Name="KHUYENMAI_CHITIETDONTHANG" Member="KHUYENMAI" ThisKey="CodeKhuyenMai" OtherKey="Code" Type="KHUYENMAI" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

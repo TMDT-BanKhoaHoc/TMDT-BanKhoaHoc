@@ -39,9 +39,6 @@ namespace TMDT_BanKhoaHoc.Models
     partial void InsertBaiGiang(BaiGiang instance);
     partial void UpdateBaiGiang(BaiGiang instance);
     partial void DeleteBaiGiang(BaiGiang instance);
-    partial void InsertCHITIETDONTHANG(CHITIETDONTHANG instance);
-    partial void UpdateCHITIETDONTHANG(CHITIETDONTHANG instance);
-    partial void DeleteCHITIETDONTHANG(CHITIETDONTHANG instance);
     partial void InsertDAYHOC(DAYHOC instance);
     partial void UpdateDAYHOC(DAYHOC instance);
     partial void DeleteDAYHOC(DAYHOC instance);
@@ -57,6 +54,12 @@ namespace TMDT_BanKhoaHoc.Models
     partial void InsertKHOAHOC(KHOAHOC instance);
     partial void UpdateKHOAHOC(KHOAHOC instance);
     partial void DeleteKHOAHOC(KHOAHOC instance);
+    partial void InsertKHUYENMAI(KHUYENMAI instance);
+    partial void UpdateKHUYENMAI(KHUYENMAI instance);
+    partial void DeleteKHUYENMAI(KHUYENMAI instance);
+    partial void InsertCHITIETDONTHANG(CHITIETDONTHANG instance);
+    partial void UpdateCHITIETDONTHANG(CHITIETDONTHANG instance);
+    partial void DeleteCHITIETDONTHANG(CHITIETDONTHANG instance);
     #endregion
 		
 		public QLKhoaHocDataContext() : 
@@ -113,14 +116,6 @@ namespace TMDT_BanKhoaHoc.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<CHITIETDONTHANG> CHITIETDONTHANGs
-		{
-			get
-			{
-				return this.GetTable<CHITIETDONTHANG>();
-			}
-		}
-		
 		public System.Data.Linq.Table<DAYHOC> DAYHOCs
 		{
 			get
@@ -160,6 +155,22 @@ namespace TMDT_BanKhoaHoc.Models
 				return this.GetTable<KHOAHOC>();
 			}
 		}
+		
+		public System.Data.Linq.Table<KHUYENMAI> KHUYENMAIs
+		{
+			get
+			{
+				return this.GetTable<KHUYENMAI>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CHITIETDONTHANG> CHITIETDONTHANGs
+		{
+			get
+			{
+				return this.GetTable<CHITIETDONTHANG>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Admin")]
@@ -167,18 +178,21 @@ namespace TMDT_BanKhoaHoc.Models
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-        [Required(ErrorMessage = "Tài khoảng không được để trống")]
-        [StringLength(50,MinimumLength = 6 , ErrorMessage = "Tài khoảng phải có 6 đến 50 ký tự")]
+		
         [Display(Name = "Tài khoản")]
+        [Required(ErrorMessage = "Tài khoản không được để trống")]
+        [StringLength(50,MinimumLength = 6 ,ErrorMessage = "Tài khoản phải có từ 6-50 ký tự")]
 		private string _TaiKhoan;
-        [Required(ErrorMessage = "Mật khẩu không được để trống")]
-        [StringLength(50, MinimumLength = 6, ErrorMessage = "Mật khẩu phải có 6 đến 50 ký tự")]
+
         [Display(Name = "Mật khẩu")]
-		private string _MatKhau;
-        [Required(ErrorMessage = "Tên admin không được để trống")]
-        [StringLength(50, MinimumLength = 6, ErrorMessage = "Tên admin phải có 6 đến 50 ký tự")]
-        [Display(Name = "Tên admin")]
-		private string _TenAdmin;
+        [Required(ErrorMessage = "Mật khẩu không được để trống")]
+        [StringLength(50, MinimumLength = 6, ErrorMessage = "Mật khẩu phải có từ 6-50 ký tự")]
+        private string _MatKhau;
+
+        [Display(Name = "Họ và tên")]
+        [Required(ErrorMessage = "Họ và tên không được để trống")]
+        [StringLength(50, MinimumLength = 6, ErrorMessage = "Họ và tên phải có từ 6-50 ký tự")]
+        private string _TenAdmin;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -283,12 +297,14 @@ namespace TMDT_BanKhoaHoc.Models
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		[Display(Name = "Mã môn học")]
-		private int _MaMH;
+
+        [Display(Name = "Mã môn học")]
+        private int _MaMH;
+
+        [Display(Name = "Tên môn học")]
         [Required(ErrorMessage = "Tên môn học không được để trống")]
-        [StringLength(50, MinimumLength = 6, ErrorMessage = "Tên môn học phải có 6 đến 50 ký tự")]
-        [Display(Name  = "Tên môn học")]
-		private string _TenMH;
+        [StringLength(50, MinimumLength = 6, ErrorMessage = "Tên môn học phải có từ 6-50 ký tự")]
+        private string _TenMH;
 		
 		private EntitySet<DAYHOC> _DAYHOCs;
 		
@@ -427,16 +443,21 @@ namespace TMDT_BanKhoaHoc.Models
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		[Display(Name = "Mã bài giảng")]
+		
+        [Display(Name = "Mã bài giảng")]
 		private int _MaBaiGiang;
-		[Display(Name = "Mã khóa học")]
+		
+        [Display(Name = "Mã khóa học")]
 		private int _MaKH;
-        [Required(ErrorMessage = "Chưa chọn video")]
-		[Display(Name = "Video")]
-		private string _Video;
-        [Required(ErrorMessage = "Chưa tóm tắt nội dung bài giảng")]
-		[Display(Name = "Tóm tắt nội dung")]
-		private string _SoLuocNoiDung;
+
+        [Display(Name = "Video")]
+        [Required(ErrorMessage = "Video không được để trống")]
+        [StringLength(150, ErrorMessage = "Video phải có từ 150 ký tự")]
+        private string _Video;
+
+        [Display(Name = "Tóm tắt nội dung")]
+        [StringLength(512, ErrorMessage = "Tóm tắt nội dung tối đa 512 ký tự")]
+        private string _SoLuocNoiDung;
 		
 		private EntityRef<KHOAHOC> _KHOAHOC;
 		
@@ -599,184 +620,20 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CHITIETDONTHANG")]
-	public partial class CHITIETDONTHANG : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		[Display(Name = "Mã đơn hàng")]
-		private int _MaDonHang;
-		[Display(Name = "Mã khách hàng")]
-		private int _MaKH;
-		
-		private EntityRef<DONDATHANG> _DONDATHANG;
-		
-		private EntityRef<KHOAHOC> _KHOAHOC;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaDonHangChanging(int value);
-    partial void OnMaDonHangChanged();
-    partial void OnMaKHChanging(int value);
-    partial void OnMaKHChanged();
-    #endregion
-		
-		public CHITIETDONTHANG()
-		{
-			this._DONDATHANG = default(EntityRef<DONDATHANG>);
-			this._KHOAHOC = default(EntityRef<KHOAHOC>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonHang", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MaDonHang
-		{
-			get
-			{
-				return this._MaDonHang;
-			}
-			set
-			{
-				if ((this._MaDonHang != value))
-				{
-					if (this._DONDATHANG.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaDonHangChanging(value);
-					this.SendPropertyChanging();
-					this._MaDonHang = value;
-					this.SendPropertyChanged("MaDonHang");
-					this.OnMaDonHangChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKH", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MaKH
-		{
-			get
-			{
-				return this._MaKH;
-			}
-			set
-			{
-				if ((this._MaKH != value))
-				{
-					if (this._KHOAHOC.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaKHChanging(value);
-					this.SendPropertyChanging();
-					this._MaKH = value;
-					this.SendPropertyChanged("MaKH");
-					this.OnMaKHChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DONDATHANG_CHITIETDONTHANG", Storage="_DONDATHANG", ThisKey="MaDonHang", OtherKey="MaDonHang", IsForeignKey=true)]
-		public DONDATHANG DONDATHANG
-		{
-			get
-			{
-				return this._DONDATHANG.Entity;
-			}
-			set
-			{
-				DONDATHANG previousValue = this._DONDATHANG.Entity;
-				if (((previousValue != value) 
-							|| (this._DONDATHANG.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._DONDATHANG.Entity = null;
-						previousValue.CHITIETDONTHANGs.Remove(this);
-					}
-					this._DONDATHANG.Entity = value;
-					if ((value != null))
-					{
-						value.CHITIETDONTHANGs.Add(this);
-						this._MaDonHang = value.MaDonHang;
-					}
-					else
-					{
-						this._MaDonHang = default(int);
-					}
-					this.SendPropertyChanged("DONDATHANG");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHOAHOC_CHITIETDONTHANG", Storage="_KHOAHOC", ThisKey="MaKH", OtherKey="MaKH", IsForeignKey=true)]
-		public KHOAHOC KHOAHOC
-		{
-			get
-			{
-				return this._KHOAHOC.Entity;
-			}
-			set
-			{
-				KHOAHOC previousValue = this._KHOAHOC.Entity;
-				if (((previousValue != value) 
-							|| (this._KHOAHOC.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._KHOAHOC.Entity = null;
-						previousValue.CHITIETDONTHANGs.Remove(this);
-					}
-					this._KHOAHOC.Entity = value;
-					if ((value != null))
-					{
-						value.CHITIETDONTHANGs.Add(this);
-						this._MaKH = value.MaKH;
-					}
-					else
-					{
-						this._MaKH = default(int);
-					}
-					this.SendPropertyChanged("KHOAHOC");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DAYHOC")]
 	public partial class DAYHOC : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		[Display(Name = "Mã giảng viên")]
+		
+        [Display(Name = "Mã giảng viên")]
 		private int _MaGV;
-		[Display(Name = "Mã khóa học")]
+		
+        [Display(Name = "Mã môn học")]
 		private int _MaMH;
-		[Display(Name = "Kinh nghiệm")]
+		
+        [Display(Name = "Kinh nghiệm")]
+        [StringLength(1000, ErrorMessage = "Kinh nghiệm có tối đa 1000 ký tự")]
 		private string _KinhNghiem;
 		
 		private EntityRef<MONHOC> _MONHOC;
@@ -964,13 +821,17 @@ namespace TMDT_BanKhoaHoc.Models
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		[Display(Name = "Mã biên lai")]
-		private int _MaDonHang;
-		[Display(Name = "Tình trạng thanh toán")]
-		private System.Nullable<bool> _Dathanhtoan;
-		[Display(Name = "Ngày lập")]
+
+        [Display(Name = "Mã đơn hàng")]
+        private int _MaDonHang;
+
+        [Display(Name = "Tình trạng thanh toán")]
+        private System.Nullable<bool> _Dathanhtoan;
+		
+        [Display(Name = "Ngày lập biên lai")]
 		private System.Nullable<System.DateTime> _Ngaydat;
-		[Display(Name = "Mã học viên")]
+		
+        [Display(Name = "Mã học viên")]
 		private System.Nullable<int> _MaHV;
 		
 		private EntitySet<CHITIETDONTHANG> _CHITIETDONTHANGs;
@@ -1167,24 +1028,26 @@ namespace TMDT_BanKhoaHoc.Models
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		[Display(Name = "Mã giảng viên")]
+		
+        [Display(Name = "Mã giảng viên")]
 		private int _MaGV;
 
-        [Required(ErrorMessage = "Chưa nhập tên giảng viên")]
-		[Display(Name = "Tên giảng viên")]
-		private string _TenGV;
+        [Display(Name = "Tên giảng viên")]
+        [Required(ErrorMessage = "Tên giảng viên không được để trống")]
+        [StringLength(50, MinimumLength = 6, ErrorMessage = "Tên giảng viên phải có từ {1}-{0} ký tự")]
+        private string _TenGV;
 
-        [Required(ErrorMessage = "Chưa nhập địa chỉ")]
-		[Display(Name = "Địa chỉ giảng viên")]
-		private string _DiachiGV;
+        [Display(Name = "Địa chỉ")]
+        [StringLength(100, ErrorMessage = "Địa chỉ giảng viên có tối đa {0} ký tự")]
+        private string _DiachiGV;
 
-		[Display(Name = "Giới thiệu")]
-		private string _Tieusu;
+        [Display(Name = "Tiểu sử")]
+        [StringLength(4000, ErrorMessage = "Tiểu sử giảng viên có tối đa {0} ký tự")]
+        private string _Tieusu;
 
-        [Required(ErrorMessage = "Chưa nhập số điện thoại")]
-        [StringLength(11,MinimumLength = 10,ErrorMessage = "Số điện thoại phải từ 10-11 ký tự")]
-		[Display(Name = "Số điện thoại")]
-		private string _Dienthoai;
+        [Display(Name = "Số điện thoại")]
+        [StringLength(11, ErrorMessage = "Số điện thoại giảng viên có tối đa {0} ký tự")]
+        private string _Dienthoai;
 		
 		private EntitySet<DAYHOC> _DAYHOCs;
 		
@@ -1389,35 +1252,41 @@ namespace TMDT_BanKhoaHoc.Models
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		[Display(Name = "Mã học viên")]
-		private int _MaHV;
 
+        [Display(Name = "Mã học viên")]
+        private int _MaHV;
+
+        [Display(Name = "Họ và tên")]
         [Required(ErrorMessage = "Họ và tên không được để trống")]
-        [StringLength(6,MinimumLength = 50, ErrorMessage = "Họ và tên phải từ 6-50 ký tự")]
-		[Display(Name = "Họ và tên")]
-		private string _HoTen;
+        [StringLength(50,MinimumLength = 6, ErrorMessage = "Họ và tên phải có từ {1}-{0} ký tự")]
+        private string _HoTen;
 
-        [Required(ErrorMessage = "Tài khoản không được để trống")]
-        [StringLength(6, MinimumLength = 50, ErrorMessage = "Tài khoản phải từ 6-50 ký tự")]
         [Display(Name = "Tài khoản")]
-		private string _Taikhoan;
+        [Required(ErrorMessage = "Tài khoản không được để trống")]
+        [StringLength(50, MinimumLength = 6, ErrorMessage = "Tài khoản phải có từ {1}-{0} ký tự")]
+        private string _Taikhoan;
 
-        [Required(ErrorMessage = "Mật khẩu không được để trống")]
-        [StringLength(6, MinimumLength = 50, ErrorMessage = "Mật khẩu phải từ 6-50 ký tự")]
         [Display(Name = "Mật khẩu")]
-		private string _Matkhau;
+        [Required(ErrorMessage = "Mật khẩu không được để trống")]
+        [StringLength(50, MinimumLength = 6, ErrorMessage = "Mật khẩu phải có từ {1}-{0} ký tự")]
+        private string _Matkhau;
 
-        [Required(ErrorMessage = "Email không được để trống")]
-        [StringLength(6, MinimumLength = 50, ErrorMessage = "Email phải từ 6-50 ký tự")]
         [Display(Name = "Email")]
-		private string _Email;
+        [Required(ErrorMessage = "Email không được để trống")]
+        [StringLength(100, MinimumLength = 6, ErrorMessage = "Email phải có từ {1}-{0} ký tự")]
+        private string _Email;
 
-		[Display(Name = "Địa chỉ")]
-		private string _DiachiHV;
+        [Display(Name = "Địa chỉ")]
+        [Required(ErrorMessage = "Địa chỉ không được để trống")]
+        [StringLength(200, MinimumLength = 6, ErrorMessage = "Địa chỉ phải có từ {1}-{0} ký tự")]
+        private string _DiachiHV;
 
         [Display(Name = "Số điện thoại")]
-		private string _DienthoaiHV;
+        [Required(ErrorMessage = "Số điện thoại không được để trống")]
+        [StringLength(11, MinimumLength = 10, ErrorMessage = "Số điện thoại phải có từ {1}-{0} ký tự")]
+        private string _DienthoaiHV;
 		
+        [Display(Name = "Ngày sinh")]
 		private System.Nullable<System.DateTime> _Ngaysinh;
 		
 		private EntitySet<DONDATHANG> _DONDATHANGs;
@@ -1661,37 +1530,37 @@ namespace TMDT_BanKhoaHoc.Models
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		[Display(Name = "Mã khóc học")]
-		private int _MaKH;
 
-        [Required(ErrorMessage = "Tên khóa học không được để trống")]
-        [StringLength(6, MinimumLength = 50, ErrorMessage = "Tên khóa học phải từ 6-50 ký tự")]
+        [Display(Name = "Mã học viên")]
+        private int _MaKH;
+
         [Display(Name = "Tên khóa học")]
-		private string _TenKH;
+        [Required(ErrorMessage = "Tên khóa học không được để trống")]
+        [StringLength(100, MinimumLength = 6, ErrorMessage = "Tên khóa học phải có từ {1}-{0} ký tự")]
+        private string _TenKH;
 
-        [Required(ErrorMessage = "Chưa nhập học phí")]
         [Display(Name = "Học phí")]
-		private System.Nullable<decimal> _HocPhi;
+        [Required(ErrorMessage = "Chưa nhập học phí")]
+        private System.Nullable<int> _HocPhi;
 
-		[Display(Name = "Mô tả")]
-		private string _Mota;
+        [Display(Name = "Mô tả")]
+        [Required(ErrorMessage = "Mô tả không được để trống")]
+        [StringLength(4000, ErrorMessage = "Mô tả không được quá {0} ký tự")]
+        private string _Mota;
 
-		[Display(Name = "Ảnh bìa")]
-		private string _Anhbia;
-
-		[Display(Name = "Ngày cập nhật")]
+        [Display(Name = "Ảnh bìa")]
+        [Required(ErrorMessage = "Ảnh bìa không được để trống")]
+        [StringLength(50, ErrorMessage = "Ảnh bìa không được quá {0} ký tự")]
+        private string _Anhbia;
+		
 		private System.Nullable<System.DateTime> _Ngaycapnhat;
-
-		[Display(Name = "Mã giảng viên")]
+		
 		private System.Nullable<int> _MaGV;
-
-		[Display(Name = "Ngày duyệt")]
+		
 		private System.Nullable<System.DateTime> _NgayDuyet;
-
-		[Display(Name = "Kết quả duyệt")]
+		
 		private System.Nullable<bool> _KetQuaDuyet;
-
-		[Display(Name = "Mã môn học")]
+		
 		private System.Nullable<int> _MaMH;
 		
 		private EntitySet<BaiGiang> _BaiGiangs;
@@ -1778,7 +1647,7 @@ namespace TMDT_BanKhoaHoc.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HocPhi", DbType="Decimal(18,0)")]
-		public System.Nullable<decimal> HocPhi
+		public System.Nullable<int> HocPhi
 		{
 			get
 			{
@@ -2081,6 +1950,359 @@ namespace TMDT_BanKhoaHoc.Models
 		{
 			this.SendPropertyChanging();
 			entity.KHOAHOC = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KHUYENMAI")]
+	public partial class KHUYENMAI : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+        [Display(Name = "Mã giảm giá")]
+		private string _Code;
+		
+        [Display(Name = "Số tiền giảm")]
+		private int _TienGiam;
+		
+		private EntitySet<CHITIETDONTHANG> _CHITIETDONTHANGs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCodeChanging(string value);
+    partial void OnCodeChanged();
+    partial void OnTienGiamChanging(int value);
+    partial void OnTienGiamChanged();
+    #endregion
+		
+		public KHUYENMAI()
+		{
+			this._CHITIETDONTHANGs = new EntitySet<CHITIETDONTHANG>(new Action<CHITIETDONTHANG>(this.attach_CHITIETDONTHANGs), new Action<CHITIETDONTHANG>(this.detach_CHITIETDONTHANGs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Code", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Code
+		{
+			get
+			{
+				return this._Code;
+			}
+			set
+			{
+				if ((this._Code != value))
+				{
+					this.OnCodeChanging(value);
+					this.SendPropertyChanging();
+					this._Code = value;
+					this.SendPropertyChanged("Code");
+					this.OnCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TienGiam", DbType="Int NOT NULL")]
+		public int TienGiam
+		{
+			get
+			{
+				return this._TienGiam;
+			}
+			set
+			{
+				if ((this._TienGiam != value))
+				{
+					this.OnTienGiamChanging(value);
+					this.SendPropertyChanging();
+					this._TienGiam = value;
+					this.SendPropertyChanged("TienGiam");
+					this.OnTienGiamChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHUYENMAI_CHITIETDONTHANG", Storage="_CHITIETDONTHANGs", ThisKey="Code", OtherKey="CodeKhuyenMai")]
+		public EntitySet<CHITIETDONTHANG> CHITIETDONTHANGs
+		{
+			get
+			{
+				return this._CHITIETDONTHANGs;
+			}
+			set
+			{
+				this._CHITIETDONTHANGs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_CHITIETDONTHANGs(CHITIETDONTHANG entity)
+		{
+			this.SendPropertyChanging();
+			entity.KHUYENMAI = this;
+		}
+		
+		private void detach_CHITIETDONTHANGs(CHITIETDONTHANG entity)
+		{
+			this.SendPropertyChanging();
+			entity.KHUYENMAI = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CHITIETDONTHANG")]
+	public partial class CHITIETDONTHANG : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+        [Display(Name = "Mã đơn giản")]
+		private int _MaDonHang;
+		
+        [Display(Name = "Mã giảm giá")]
+        [StringLength(10,MinimumLength = 10, ErrorMessage = "Mã giảm giá phải có {0} ký tự")]
+		private string _CodeKhuyenMai;
+		
+        [Display(Name = "Mã khách hàng")]
+		private int _MaKH;
+		
+		private EntityRef<DONDATHANG> _DONDATHANG;
+		
+		private EntityRef<KHOAHOC> _KHOAHOC;
+		
+		private EntityRef<KHUYENMAI> _KHUYENMAI;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaDonHangChanging(int value);
+    partial void OnMaDonHangChanged();
+    partial void OnCodeKhuyenMaiChanging(string value);
+    partial void OnCodeKhuyenMaiChanged();
+    partial void OnMaKHChanging(int value);
+    partial void OnMaKHChanged();
+    #endregion
+		
+		public CHITIETDONTHANG()
+		{
+			this._DONDATHANG = default(EntityRef<DONDATHANG>);
+			this._KHOAHOC = default(EntityRef<KHOAHOC>);
+			this._KHUYENMAI = default(EntityRef<KHUYENMAI>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonHang", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MaDonHang
+		{
+			get
+			{
+				return this._MaDonHang;
+			}
+			set
+			{
+				if ((this._MaDonHang != value))
+				{
+					if (this._DONDATHANG.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaDonHangChanging(value);
+					this.SendPropertyChanging();
+					this._MaDonHang = value;
+					this.SendPropertyChanged("MaDonHang");
+					this.OnMaDonHangChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeKhuyenMai", DbType="NChar(10)")]
+		public string CodeKhuyenMai
+		{
+			get
+			{
+				return this._CodeKhuyenMai;
+			}
+			set
+			{
+				if ((this._CodeKhuyenMai != value))
+				{
+					if (this._KHUYENMAI.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCodeKhuyenMaiChanging(value);
+					this.SendPropertyChanging();
+					this._CodeKhuyenMai = value;
+					this.SendPropertyChanged("CodeKhuyenMai");
+					this.OnCodeKhuyenMaiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKH", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MaKH
+		{
+			get
+			{
+				return this._MaKH;
+			}
+			set
+			{
+				if ((this._MaKH != value))
+				{
+					if (this._KHOAHOC.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaKHChanging(value);
+					this.SendPropertyChanging();
+					this._MaKH = value;
+					this.SendPropertyChanged("MaKH");
+					this.OnMaKHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DONDATHANG_CHITIETDONTHANG", Storage="_DONDATHANG", ThisKey="MaDonHang", OtherKey="MaDonHang", IsForeignKey=true)]
+		public DONDATHANG DONDATHANG
+		{
+			get
+			{
+				return this._DONDATHANG.Entity;
+			}
+			set
+			{
+				DONDATHANG previousValue = this._DONDATHANG.Entity;
+				if (((previousValue != value) 
+							|| (this._DONDATHANG.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DONDATHANG.Entity = null;
+						previousValue.CHITIETDONTHANGs.Remove(this);
+					}
+					this._DONDATHANG.Entity = value;
+					if ((value != null))
+					{
+						value.CHITIETDONTHANGs.Add(this);
+						this._MaDonHang = value.MaDonHang;
+					}
+					else
+					{
+						this._MaDonHang = default(int);
+					}
+					this.SendPropertyChanged("DONDATHANG");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHOAHOC_CHITIETDONTHANG", Storage="_KHOAHOC", ThisKey="MaKH", OtherKey="MaKH", IsForeignKey=true)]
+		public KHOAHOC KHOAHOC
+		{
+			get
+			{
+				return this._KHOAHOC.Entity;
+			}
+			set
+			{
+				KHOAHOC previousValue = this._KHOAHOC.Entity;
+				if (((previousValue != value) 
+							|| (this._KHOAHOC.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._KHOAHOC.Entity = null;
+						previousValue.CHITIETDONTHANGs.Remove(this);
+					}
+					this._KHOAHOC.Entity = value;
+					if ((value != null))
+					{
+						value.CHITIETDONTHANGs.Add(this);
+						this._MaKH = value.MaKH;
+					}
+					else
+					{
+						this._MaKH = default(int);
+					}
+					this.SendPropertyChanged("KHOAHOC");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHUYENMAI_CHITIETDONTHANG", Storage="_KHUYENMAI", ThisKey="CodeKhuyenMai", OtherKey="Code", IsForeignKey=true)]
+		public KHUYENMAI KHUYENMAI
+		{
+			get
+			{
+				return this._KHUYENMAI.Entity;
+			}
+			set
+			{
+				KHUYENMAI previousValue = this._KHUYENMAI.Entity;
+				if (((previousValue != value) 
+							|| (this._KHUYENMAI.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._KHUYENMAI.Entity = null;
+						previousValue.CHITIETDONTHANGs.Remove(this);
+					}
+					this._KHUYENMAI.Entity = value;
+					if ((value != null))
+					{
+						value.CHITIETDONTHANGs.Add(this);
+						this._CodeKhuyenMai = value.Code;
+					}
+					else
+					{
+						this._CodeKhuyenMai = default(string);
+					}
+					this.SendPropertyChanged("KHUYENMAI");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

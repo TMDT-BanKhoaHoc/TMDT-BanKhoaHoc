@@ -1,0 +1,15 @@
+﻿@model IEnumerable<TMDT_BanKhoaHoc.Models.GIANGVIEN>
+@{ 
+    Layout = null;
+}
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <li class="list-item">
+            <a href="/">
+                @item.TenGV
+            </a>
+        </li>
+    }
+}

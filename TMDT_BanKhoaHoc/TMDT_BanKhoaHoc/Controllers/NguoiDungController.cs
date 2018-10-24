@@ -23,8 +23,43 @@ namespace TMDT_BanKhoaHoc.Controllers
             return View(khoahocs);
         }
 
+        public ActionResult DangNhap()
+        {
+            if(Session[SesHocVien] == null)
+            {
+                return View();
+            }
+            return Redirect("/");
+        }
+
+        [HttpPost]
+        [ValidateInput(true)]
+        [ValidateAntiForgeryToken]
+        public ActionResult DangNhap(FormDangNhap form)
+        {
+            if(ValidateRequest)
+            {
+                if (Session[SesHocVien] != null)
+                {
+                    return Redirect("/");
+                }
+
+                HOCVIEN hv = db.HOCVIENs.SingleOrDefault(n => n.Taikhoan == form.TaiKhoan && n.Matkhau == form.MatKhau);
+
+                if (hv == null)
+                {
+                    form.MatKhau = "";
+                    ViewData["loi"] = "Tài khoản hoặc mật khẩu không đúng";
+                    return View(form);
+                }
+
+                return Redirect("/");
+            }
+            return View(form);
+        }
+
         // GET: NguoiDung/Create
-        public ActionResult Create()
+        public ActionResult DangKy()
         {
             if(Session[SesHocVien] != null)
             {
@@ -34,7 +69,7 @@ namespace TMDT_BanKhoaHoc.Controllers
         }
         
         [HttpPost]
-        public ActionResult Create(HOCVIEN hocvien)
+        public ActionResult DangKy(HOCVIEN hocvien)
         {
             try
             {
@@ -51,6 +86,20 @@ namespace TMDT_BanKhoaHoc.Controllers
                     return View(hocvien);
                 }
 
+                if(hocvien.Email.IndexOf('@') > 0)
+                {
+                    string[] a = hocvien.Email.Split('@');
+                    if(a[1].IndexOf('.') < 1)
+                    {
+                        ViewData["email"] = "Email không hợp lệ";
+                        return View(hocvien);
+                    }
+                } else
+                {
+                    ViewData["email"] = "Email không hợp lệ";
+                    return View(hocvien);
+                }
+                    
                 db.HOCVIENs.InsertOnSubmit(hocvien);
 
                 return Redirect("/");
