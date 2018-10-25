@@ -1,0 +1,64 @@
+﻿@model IEnumerable<TMDT_BanKhoaHoc.Models.KHOAHOC>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutGV.cshtml";
+}
+
+<h2>DANH SÁCH KHÓA HỌC</h2>
+
+<p>
+    @Html.ActionLink("Thêm khóa học", "Addkh")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Anhbia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ngaycapnhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayDuyet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KetQuaDuyet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MONHOC)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Anhbia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngaycapnhat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayDuyet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KetQuaDuyet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MONHOC.TenMH)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaKH }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaKH }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaKH })
+        </td>
+    </tr>
+}
+
+</table>

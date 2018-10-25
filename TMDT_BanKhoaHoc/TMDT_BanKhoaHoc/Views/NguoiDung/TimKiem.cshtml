@@ -13,22 +13,31 @@
             if (item.GetType() == typeof(KHOAHOC))
             {
                 KHOAHOC khoahoc = (KHOAHOC)item;
-                <li class="listitem clearfix">
-                    <a class="title" href="@Url.Action(actionName: "ThongKhoaHoc",routeValues: new { khoahoc = khoahoc.MaKH})">
-                        @khoahoc.TenKH
-                    </a>
-                    <a class="thumb" href="@Url.Action(actionName: "ThongKhoaHoc",routeValues: new { khoahoc = khoahoc.MaKH})">
-                        <img src="~/img/@khoahoc.Anhbia" alt="@khoahoc.TenKH" />
-                    </a>
-                    @if (khoahoc.Mota != null)
-                    {
-                        <div class="desc">@khoahoc.Mota.Substring(0, 150)...</div>
-                    }
-                    else
-                    {
-                        <div class="desc"></div>
-                    }
-                </li>
+        <li class="listitem clearfix">
+            <a class="title" href="@Url.Action(actionName: "ThongKhoaHoc",routeValues: new { khoahoc = khoahoc.MaKH})">
+                @khoahoc.TenKH
+            </a>
+            <a class="thumb" href="@Url.Action(actionName: "ThongKhoaHoc",routeValues: new { khoahoc = khoahoc.MaKH})">
+                <img src="~/img/@khoahoc.Anhbia" alt="@khoahoc.TenKH" />
+            </a>
+            @if (khoahoc.Mota != null)
+            {
+                if (khoahoc.Mota.Length > 150)
+                {
+
+                    <div class="desc">@khoahoc.Mota.Substring(0, 150)...</div>
+                }
+                else
+                {
+
+                    <div class="desc">@khoahoc.Mota</div>
+                }
+            }
+            else
+            {
+                <div class="desc"></div>
+            }
+        </li>
             }
             else if (item.GetType() == typeof(GIANGVIEN))
             {
@@ -39,7 +48,14 @@
                     </a>
                     @if (giangvien.Tieusu != null)
                     {
-                        <div class="desc">@giangvien.Tieusu.Substring(0, 150)...</div>
+                        @if (giangvien.Tieusu.Length > 150)
+                        {
+                            <div class="desc">@giangvien.Tieusu.Substring(0, 150)...</div>
+                        }
+                        else
+                        {
+                            <div class="desc">@giangvien.Tieusu</div>
+                        }
                     }
                     else
                     {

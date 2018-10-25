@@ -1,0 +1,72 @@
+﻿@model TMDT_BanKhoaHoc.Models.GIANGVIEN
+
+@{
+    ViewBag.Title = "Xoagv";
+    Layout = "~/Views/Shared/_LayoutADMIN.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn có chắc muốn xóa giảng viên này chứ?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenGV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenGV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiachiGV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiachiGV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tieusu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tieusu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dienthoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dienthoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaiKhoan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaiKhoan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MatKhau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatKhau)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "GV")
+        </div>
+    }
+</div>

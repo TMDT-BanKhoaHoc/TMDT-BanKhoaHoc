@@ -1,0 +1,56 @@
+﻿@model IEnumerable<TMDT_BanKhoaHoc.Models.GIANGVIEN>
+
+@{
+    ViewBag.Title = "GV";
+    Layout = "~/Views/Shared/_LayoutADMIN.cshtml";
+}
+
+<h2>GV</h2>
+
+<p>
+    @Html.ActionLink("Thêm giảng viên", "AddGV")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenGV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiachiGV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tieusu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dienthoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaiKhoan)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenGV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiachiGV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tieusu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dienthoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaiKhoan)
+        </td>
+        <td>
+            @Html.ActionLink("Xóa", "Xoagv", new { id=item.MaGV })
+        </td>
+    </tr>
+}
+
+</table>

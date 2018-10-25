@@ -1,0 +1,22 @@
+﻿@model IEnumerable<TMDT_BanKhoaHoc.Models.BaiGiang>
+
+@{
+    ViewBag.Title = "LietKeBaiGiang";
+}
+
+<h2>LietKeBaiGiang</h2>
+
+@if(Model != null)
+{
+    foreach(var baigiang in Model)
+    {
+        <div class="col-md-8 label label-default">
+            @baigiang.MaBaiGiang
+        </div>
+        <div class="col-md-4">
+            <a class="btn btn-danger" style="width: 100%; text-align: center;" href="@Url.Action(actionName: "ThuGiang", routeValues: new { baigiang = baigiang.MaBaiGiang })">
+                Học
+            </a>
+        </div>
+    }
+}

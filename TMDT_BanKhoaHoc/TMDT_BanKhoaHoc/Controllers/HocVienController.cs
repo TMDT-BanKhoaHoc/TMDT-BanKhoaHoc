@@ -497,5 +497,56 @@ namespace TMDT_BanKhoaHoc.Controllers
             }
             return View();
         }
+
+        public ActionResult ThuGiang (int baigiang)
+        {
+            if(Session[SesHocVien] == null)
+            {
+                return RedirectToAction(actionName: "DangNhap");
+            }
+
+            HOCVIEN hocvien = (HOCVIEN)Session[SesHocVien];
+
+            BaiGiang giang;
+
+            var baiGiang = (from bg in db.BaiGiangs
+                                 join kh in db.KHOAHOCs on bg.MaKH equals kh.MaKH
+                                 join ct in db.CHITIETDONTHANGs on kh.MaKH equals ct.MaKH
+                                 join bl in db.DONDATHANGs on ct.MaDonHang equals bl.MaDonHang
+                                 where bg.MaBaiGiang == baigiang && hocvien.MaHV == bl.MaHV && bl.Dathanhtoan == true
+                                 select bg);
+            if(baiGiang.Count() == 1)
+            {
+                giang = baiGiang.FirstOrDefault();
+            } else
+            {
+                return View();
+            }
+
+            return View(giang);
+        }
+
+        public ActionResult LietKeBaiGiang(int khoahoc)
+        {
+            if (Session[SesHocVien] == null)
+            {
+                return RedirectToAction(actionName: "DangNhap");
+            }
+
+            HOCVIEN hocvien = (HOCVIEN)Session[SesHocVien];
+
+            var baiGiang = (from bg in db.BaiGiangs
+                            join kh in db.KHOAHOCs on bg.MaKH equals kh.MaKH
+                            join ct in db.CHITIETDONTHANGs on kh.MaKH equals ct.MaKH
+                            join bl in db.DONDATHANGs on ct.MaDonHang equals bl.MaDonHang
+                            where bg.MaKH == kh.MaKH && hocvien.MaHV == bl.MaHV && bl.Dathanhtoan == true
+                            select bg);
+            if(baiGiang.Count() > 0)
+            {
+                return View(baiGiang.ToList());
+            }
+
+            return View();
+        }
     }
 }

@@ -1903,7 +1903,7 @@ namespace TMDT_BanKhoaHoc.Models
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaMH", DbType="Int")]
 
-        [Display(Name = "Mã khách hàng")]
+        [Display(Name = "Mã môn học")]
         public System.Nullable<int> MaMH
 		{
 			get

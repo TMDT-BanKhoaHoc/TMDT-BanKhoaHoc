@@ -239,7 +239,9 @@
     <Compile Include="Common\Configuration.cs" />
     <Compile Include="Common\Logger.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\Control.cs" />
+    <Compile Include="Controllers\GiangVienController.cs" />
     <Compile Include="Controllers\HocVienController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NguoiDungController.cs" />
@@ -372,10 +374,25 @@
     <Content Include="Views\NguoiDung\KhoaHocTheoGiangVien.cshtml" />
     <Content Include="Views\NguoiDung\LietKeKhoaHoctheoGiangVien.cshtml" />
     <Content Include="Views\NguoiDung\KhoaHocTheoMonHoc.cshtml" />
+    <Content Include="Views\HocVien\ThuGiang.cshtml" />
+    <Content Include="Views\HocVien\LietKeBaiGiang.cshtml" />
+    <Content Include="Views\Shared\_LayoutADMIN.cshtml" />
+    <Content Include="Views\Admin\AddGV.cshtml" />
+    <Content Include="Views\Admin\DangNhapAD.cshtml" />
+    <Content Include="Views\Admin\Duyetkh.cshtml" />
+    <Content Include="Views\Admin\GV.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\KH.cshtml" />
+    <Content Include="Views\Admin\Xoagv.cshtml" />
+    <Content Include="Views\GiangVien\Addkh.cshtml" />
+    <Content Include="Views\GiangVien\DangNhapGV.cshtml" />
+    <Content Include="Views\GiangVien\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutGV.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="img\" />
+    <Folder Include="video\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

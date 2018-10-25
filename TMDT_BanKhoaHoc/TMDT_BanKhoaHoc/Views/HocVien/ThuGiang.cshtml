@@ -1,0 +1,28 @@
+﻿@model TMDT_BanKhoaHoc.Models.BaiGiang
+
+@{
+    ViewBag.Title = "Thụ giảng";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="col-md-12">
+    <h4>@Model.KHOAHOC.TenKH</h4>
+    <hr />
+    <div class="col-md-12">
+        <div class="col-md-12">
+            <video src="@Model.Video"></video>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-12 label label-default">
+            Các bài giảng khác
+        </div>
+        <div class="col-md-12">
+            @Html.Action(controllerName: "HocVien", actionName: "LietKeBaiGiang", routeValues: new { khoahoc = Model.MaKH});
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

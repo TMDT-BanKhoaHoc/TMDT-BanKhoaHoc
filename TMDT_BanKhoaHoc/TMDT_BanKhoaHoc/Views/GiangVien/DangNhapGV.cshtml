@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DangNhapGV</title>
+</head>
+<body>
+    <center>
+        <h2>ĐĂNG NHẬP HỆ THỐNG GIẢNG VIÊN</h2>
+        <h4 style="color:red; text-align:center">@ViewBag.ThongBao</h4>
+        <table>
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <tr>
+                    <td>Account: </td>
+                    <td><input type="text" name="account" /></td>
+                    @ViewData["loi1"]
+
+                </tr>
+                <tr>
+                    <td>Mật khẩu:</td>
+                    <td><input type="password" name="pass" /></td>
+                    @ViewData["loi2"]
+                </tr>
+                <tr>
+
+                    <td colspan="2" style="text-align:center">
+                        <button type="submit" class="btn">Đăng nhập</button>
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </center>
+</body>
+</html>
