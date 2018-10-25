@@ -1,0 +1,68 @@
+﻿@model IEnumerable<object>
+    @using TMDT_BanKhoaHoc.Models;
+@{
+    Layout = null;
+}
+
+<div class="listview">
+    @if (Model != null)
+    {
+    <ul>
+        @foreach (var item in Model)
+        {
+            if (item.GetType() == typeof(KHOAHOC))
+            {
+                KHOAHOC khoahoc = (KHOAHOC)item;
+                <li class="listitem clearfix">
+                    <a class="title" href="@Url.Action(actionName: "ThongKhoaHoc",routeValues: new { khoahoc = khoahoc.MaKH})">
+                        @khoahoc.TenKH
+                    </a>
+                    <a class="thumb" href="@Url.Action(actionName: "ThongKhoaHoc",routeValues: new { khoahoc = khoahoc.MaKH})">
+                        <img src="~/img/@khoahoc.Anhbia" alt="@khoahoc.TenKH" />
+                    </a>
+                    @if (khoahoc.Mota != null)
+                    {
+                        <div class="desc">@khoahoc.Mota.Substring(0, 150)...</div>
+                    }
+                    else
+                    {
+                        <div class="desc"></div>
+                    }
+                </li>
+            }
+            else if (item.GetType() == typeof(GIANGVIEN))
+            {
+                GIANGVIEN giangvien = (GIANGVIEN)item;
+                <li class="listitem clearfix">
+                    <a class="title" href="@Url.Action(actionName: "KhoaHocTheoGiangVien",routeValues: new { giangvien = giangvien.MaGV})">
+                        @giangvien.TenGV
+                    </a>
+                    @if (giangvien.Tieusu != null)
+                    {
+                        <div class="desc">@giangvien.Tieusu.Substring(0, 150)...</div>
+                    }
+                    else
+                    {
+                        <div class="desc"></div>
+                    }
+                </li>
+            }
+            else
+            {
+                MONHOC monhoc = (MONHOC)item;
+                <li class="listitem clearfix">
+                    <a class="title" href="@Url.Action(actionName: "KhoaHocTheoMonHoc",routeValues: new { monhoc = monhoc.MaMH})">
+                        @monhoc.TenMH
+                    </a>
+                </li>
+            }
+        }
+    </ul>
+    }
+    else
+    {
+        <p style="font-size: large;">
+            Không có khóa học nào
+        </p>
+    }
+</div>

@@ -1216,7 +1216,7 @@ namespace TMDT_BanKhoaHoc.Models
         [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_TaiKhoan", DbType = "NVarChar(20) NOT NULL")]
 
         [Display(Name = "Tài khoản")]
-        [StringLength(20, MinimumLength = 10, ErrorMessage = "Tài khoản giảng viên có từ 10-11 ký tự")]
+        [StringLength(20, MinimumLength = 4, ErrorMessage = "Tài khoản giảng viên có từ 4-20 ký tự")]
         public string TaiKhoan
         {
             get
@@ -1239,7 +1239,7 @@ namespace TMDT_BanKhoaHoc.Models
         [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_MatKhau", DbType = "NVarChar(20) NOT NULL")]
 
         [Display(Name = "Mật khẩu")]
-        [StringLength(20, MinimumLength = 10, ErrorMessage = "Mật khẩu phải có từ 6-20 ký tự")]
+        [StringLength(20, MinimumLength = 4, ErrorMessage = "Mật khẩu phải có từ 4-20 ký tự")]
         public string MatKhau
         {
             get

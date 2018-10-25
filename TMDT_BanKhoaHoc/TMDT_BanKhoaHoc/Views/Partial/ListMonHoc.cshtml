@@ -8,7 +8,7 @@
     foreach (var item in Model)
     {
         <li class="12">
-            <a href="/">
+            <a href="@Url.Action(controllerName: "NguoiDung", actionName: "KhoaHocTheoMonHoc", routeValues: new { monhoc = item.MaMH })">
                 @item.TenMH
             </a>
         </li>

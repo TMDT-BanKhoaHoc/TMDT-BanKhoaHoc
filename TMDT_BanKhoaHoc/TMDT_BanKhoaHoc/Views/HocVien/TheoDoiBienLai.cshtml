@@ -1,0 +1,45 @@
+﻿@model IEnumerable<TMDT_BanKhoaHoc.Models.DONDATHANG>
+
+@{
+    ViewBag.Title = "Theo dõi biên lai";
+}
+
+<h2>@ViewBag.Title</h2>
+<hr />
+@if (Model != null)
+{
+    @foreach (var item in Model)
+    {
+        <div class="col-md-12">
+            <div class="col-md-6 label label-default">
+                @item.MaDonHang
+            </div>
+            <div class="col-md-6 label label-default">
+                @if (item.Dathanhtoan == true)
+                {
+                    <p style="font-size: medium">
+                        Đã thanh toán
+                    </p>
+                }
+                else
+                {
+                    <p style="font-size: medium">
+                        Chưa thanh toán
+                    </p>
+                }
+            </div>
+            <div class="col-md-12">
+                @Html.Action(actionName: "KhoaHocTheoBienLai", routeValues: new { bienlai = item.MaDonHang })
+            </div>
+        </div>
+    }
+
+}
+else
+{
+    <div class="col-md-12">
+        <p style="font-size: large">
+            Không có biên lai nào
+        </p>
+    </div>
+}

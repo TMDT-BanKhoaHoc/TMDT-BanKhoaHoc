@@ -1,0 +1,65 @@
+﻿@model IEnumerable<TMDT_BanKhoaHoc.Models.KHOAHOC>
+
+@{
+    ViewBag.Title = "Giỏ hàng";
+}
+
+@if (Model != null && Model.Count() > 0)
+{
+    <div id="giohang" class="col-md-12">
+        <table class="table">
+            <tr>
+                <th style="width: 20%">
+                    @Html.DisplayNameFor(model => model.TenKH)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HocPhi)
+                </th>
+                <th style="width: 35%;">
+                    @Html.DisplayNameFor(model => model.Anhbia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MONHOC)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="@Url.Action(controllerName: "NguoiDung", actionName: "ThongKhoaHoc", routeValues: new { khoahoc = item.MaKH })">@Html.DisplayFor(modelItem => item.TenKH)</a>
+                    </td>
+                    <td>
+                        @string.Format("{0:0,000} VND", item.HocPhi)
+                    </td>
+                    <td>
+                        <img class="thumb img-thumbnail" src="~/img/@item.Anhbia" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MONHOC.TenMH)
+                    </td>
+                    <td>
+                        <button class="btn-Xoa btn btn-danger" data-xoagiohang="@item.MaKH">Xóa</button>
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <div class="col-md-offset-4 col-md-4">
+            <a href="@Url.Action(actionName: "ThanhToan")" class="btn btn-danger">Thanh toán</a>
+        </div>
+    </div>
+
+}
+else
+{
+    <div>
+        <p style="font-size: large">
+            Giỏ hàng trống
+        </p>
+    </div>
+}
+<div style="display: none;">
+    <script src="~/Scripts/APIXoaGioHang.js"></script>
+</div>

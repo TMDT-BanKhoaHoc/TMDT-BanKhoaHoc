@@ -14,7 +14,7 @@ namespace TMDT_BanKhoaHoc.Controllers
         // GET: NguoiDung/Details/5
         public ActionResult Index()
         {
-            var khoahocs = db.KHOAHOCs;
+            var khoahocs = db.KHOAHOCs.Where(n => n.KetQuaDuyet == true);
 
             if(khoahocs.Count() == 0)
             {
@@ -24,99 +24,130 @@ namespace TMDT_BanKhoaHoc.Controllers
             return View(khoahocs);
         }
 
-        public ActionResult DangNhap()
+        public ActionResult ThongKhoaHoc(int khoahoc)
         {
-            if(Session[SesHocVien] == null)
+            KHOAHOC khoaHoc = db.KHOAHOCs.SingleOrDefault(n => n.MaKH == khoahoc);
+
+            ViewBag.MuaHang = false;
+
+            if (khoaHoc == null)
             {
                 return View();
             }
-            return Redirect("/");
-        }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult DangNhap(FormDangNhap form)
-        {
-            if(ModelState.IsValid)
+            if(Session[SesHocVien] == null)
             {
-                if (Session[SesHocVien] != null)
-                {
-                    return Redirect("/");
-                }
-
-                HOCVIEN hv = db.HOCVIENs.SingleOrDefault(n => n.Taikhoan == form.TaiKhoan && n.Matkhau == form.MatKhau);
-
-                if (hv == null)
-                {
-                    form.MatKhau = "";
-                    ViewData["loi"] = "Tài khoản hoặc mật khẩu không đúng";
-                    return View(form);
-                }
-                Session[SesHocVien] = hv;
-                return Redirect("/");
+                return View(khoaHoc);
             }
-            return View(form);
+
+            HOCVIEN hocvien = (HOCVIEN)Session[SesHocVien];
+
+            if (hocvien != null)
+            {
+                CHITIETDONTHANG chitiet = db.CHITIETDONTHANGs.SingleOrDefault(n => n.DONDATHANG.HOCVIEN.MaHV == hocvien.MaHV
+                                            && n.KHOAHOC.MaKH == khoaHoc.MaKH);
+
+                if (chitiet != null)
+                {
+                    ViewBag.MuaHang = true;
+                }
+            }
+
+            var baigiangs = khoaHoc.BaiGiangs;
+            if (baigiangs.Count != 0)
+            {
+                ViewBag.BaiGiangs = baigiangs.ToList();
+            }
+            
+            return View(khoaHoc);
         }
 
-        // GET: NguoiDung/Create
-        public ActionResult DangKy()
+        public ActionResult MonHoc(string monhoc)
         {
-            if(Session[SesHocVien] != null)
+            int mamonhoc;
+
+            if(!int.TryParse(monhoc, out mamonhoc))
             {
-                return Redirect("/");
+                return View();
+            }
+
+            var khoahocs = db.KHOAHOCs.Where(n => n.MONHOC.MaMH == mamonhoc && n.KetQuaDuyet == true);
+
+            if(khoahocs.Count() == 0)
+            {
+                return View();
+            }
+            return View(khoahocs.ToList());
+        }
+
+        public ActionResult TimKiem(string text)
+        {
+            var khoahocs = db.KHOAHOCs.Where(n => n.TenKH.Contains(text));
+            var giangviens = db.GIANGVIENs.Where(n => n.TenGV.Contains(text));
+            var monhocs = db.MONHOCs.Where(n => n.TenMH.Contains(text));
+            List<object> list = new List<object>();
+            if(khoahocs.Count() > 0)
+            {
+                foreach(var khoahoc in khoahocs)
+                {
+                    list.Add(khoahoc);
+                }
+            }
+            if(giangviens.Count() > 0)
+            {
+                foreach(var giangvien in giangviens)
+                {
+                    list.Add(giangvien);
+                }
+            }
+            if(monhocs.Count() > 0)
+            {
+                foreach(var monhoc in monhocs)
+                {
+                    list.Add(monhoc);
+                }
+            }
+
+            if(list.Count != 0)
+            {
+                return View(list);
             }
             return View();
         }
-        
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult DangKy(HOCVIEN hocvien)
+
+        public ActionResult KhoaHocTheoGiangVien(int giangvien)
         {
-            try
+            GIANGVIEN giangVien = db.GIANGVIENs.SingleOrDefault(n => n.MaGV == giangvien);
+
+            if(giangVien != null)
             {
-                if(ModelState.IsValid)
-                {
-                    if (Session[SesHocVien] != null)
-                    {
-                        return Redirect("/");
-                    }
-
-                    HOCVIEN hv = db.HOCVIENs.SingleOrDefault(n => n.Taikhoan == hocvien.Taikhoan);
-
-                    if (hv != null)
-                    {
-                        ViewData["taikhoan"] = "Tài khoản đã được sử dụng";
-                        return View(hocvien);
-                    }
-
-                    if (hocvien.Email.IndexOf('@') > 0)
-                    {
-                        string[] a = hocvien.Email.Split('@');
-                        if (a[1].IndexOf('.') < 1)
-                        {
-                            ViewData["email"] = "Email không hợp lệ";
-                            return View(hocvien);
-                        }
-                    }
-                    else
-                    {
-                        ViewData["email"] = "Email không hợp lệ";
-                        return View(hocvien);
-                    }
-
-                    db.HOCVIENs.InsertOnSubmit(hocvien);
-                    db.SubmitChanges();
-
-                    return RedirectToAction(controllerName: "NguoiDung", actionName: "DangNhap");
-                } else
-                {
-                    return View(hocvien);
-                }
+                return View(giangVien);
             }
-            catch
+
+            return View();
+        }
+
+        public ActionResult LietKeKhoaHoctheoGiangVien(int giangvien)
+        {
+            var khoahocs = db.KHOAHOCs.Where(n => n.MaGV == giangvien);
+
+            if(khoahocs.Count() > 0)
             {
-                return View();
+                return View(khoahocs.ToList());
             }
+            return View();
+        }
+
+        public ActionResult KhoaHocTheoMonHoc(int monhoc)
+        {
+            var khoahocs = db.KHOAHOCs.Where(n => n.MaMH == monhoc);
+
+            if(khoahocs.Count() > 0)
+            {
+                ViewBag.Title = khoahocs.First().MONHOC.TenMH;
+                return View(khoahocs.ToList());
+            }
+            return View();
         }
     }
 }

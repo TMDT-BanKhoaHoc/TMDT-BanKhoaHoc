@@ -1,9 +1,12 @@
 ﻿@model TMDT_BanKhoaHoc.Models.HOCVIEN
+
 @{
-    ViewBag.Title = "Thông tin cá nhân"
+    ViewBag.Title = "Thông tin cá nhân";
 }
+
+<h2>@ViewBag.Title</h2>
+
 <div>
-    <h4>Thông tin cá nhân</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -27,7 +30,7 @@
         </dt>
 
         <dd>
-            @Html.ActionLink("Đổi mật khẩu", actionName: "DoiMatKhau")
+            @Html.ActionLink(linkText: "Đổi mật khẩu", actionName: "DoiMatKhau")
         </dd>
 
         <dt>
@@ -59,11 +62,15 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Ngaysinh)
+            @if (Model.Ngaysinh != null)
+            {
+
+                @Model.Ngaysinh.Value.ToShortDateString()
+            }
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Sửa thông tin cá nhân", "SuaThongTin")
+    @Html.ActionLink("Sửa thông tin", "SuaThongTin")
 </p>

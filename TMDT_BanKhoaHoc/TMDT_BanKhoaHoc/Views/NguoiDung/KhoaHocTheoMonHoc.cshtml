@@ -1,0 +1,36 @@
+﻿@model IEnumerable<TMDT_BanKhoaHoc.Models.KHOAHOC>
+
+<h2>@ViewBag.Title</h2>
+
+<div class="listview">
+    @if (Model != null)
+    {
+        <ul>
+            @foreach (var khoahoc in Model)
+            {
+                <li class="listitem clearfix">
+                    <a class="title" href="@Url.Action(actionName: "ThongKhoaHoc",routeValues: new { khoahoc = khoahoc.MaKH})">
+                        @khoahoc.TenKH
+                    </a>
+                    <a class="thumb" href="@Url.Action(actionName: "ThongKhoaHoc",routeValues: new { khoahoc = khoahoc.MaKH})">
+                        <img src="~/img/@khoahoc.Anhbia" alt="@khoahoc.TenKH" />
+                    </a>
+                    @if (khoahoc.Mota != null)
+                    {
+                        <div class="desc">@khoahoc.Mota.Substring(0, 150)...</div>
+                    }
+                    else
+                    {
+                        <div class="desc"></div>
+                    }
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p style="font-size: large;">
+            Không có khóa học nào
+        </p>
+    }
+</div>

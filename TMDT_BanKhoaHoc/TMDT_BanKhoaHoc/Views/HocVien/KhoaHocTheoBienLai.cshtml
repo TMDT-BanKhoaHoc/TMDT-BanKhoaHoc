@@ -1,0 +1,37 @@
+﻿@model IEnumerable<TMDT_BanKhoaHoc.Models.KHOAHOC>
+@{
+    Layout = null;
+}
+
+@if (Model != null)
+{
+    <table class="table">
+        <tr>
+            <th width="40%">
+                @Html.DisplayNameFor(model => model.Anhbia)
+            </th>
+            <th width="30%">
+                @Html.DisplayNameFor(model => model.TenKH)
+            </th>
+            <th width="30%">
+                @Html.DisplayNameFor(model => model.MaMH)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="~/img/@item.Anhbia" alt="@item.TenKH" />
+                </td>
+                <td>
+                    <a href="@Url.Action(controllerName: "NguoiDung", actionName: "ThongKhoaHoc", routeValues: new { khoahoc = item.MaKH})">@item.TenKH</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MONHOC.TenMH)
+                </td>
+            </tr>
+        }
+    </table>
+
+}

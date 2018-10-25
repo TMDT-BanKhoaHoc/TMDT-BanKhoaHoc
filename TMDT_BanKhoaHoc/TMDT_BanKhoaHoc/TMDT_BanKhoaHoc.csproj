@@ -236,6 +236,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Common\Configuration.cs" />
+    <Compile Include="Common\Logger.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Control.cs" />
     <Compile Include="Controllers\HocVienController.cs" />
@@ -249,6 +251,7 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\FormDangNhap.cs" />
+    <Compile Include="Models\FormDoiMatKhau.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\QLKhoaHoc.designer.cs">
       <AutoGen>True</AutoGen>
@@ -279,6 +282,8 @@
     <Content Include="Scripts\-vtndqSSWSu.js" />
     <Content Include="Scripts\94opnalmU8p.js" />
     <Content Include="Scripts\analytics.js" />
+    <Content Include="Scripts\APIThemGioHang.js" />
+    <Content Include="Scripts\APIXoaGioHang.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -351,10 +356,22 @@
     <Content Include="Views\NguoiDung\Index.cshtml" />
     <Content Include="Views\Partial\ListMonHoc.cshtml" />
     <Content Include="Views\Partial\ListGiangVien.cshtml" />
-    <Content Include="Views\NguoiDung\DangKy.cshtml" />
-    <Content Include="Views\NguoiDung\DangNhap.cshtml" />
+    <Content Include="Views\HocVien\DangKy.cshtml" />
+    <Content Include="Views\HocVien\DangNhap.cshtml" />
+    <Content Include="Views\HocVien\SuaThongTin.cshtml" />
+    <Content Include="Views\HocVien\DoiMatKhau.cshtml" />
     <Content Include="Views\HocVien\Index.cshtml" />
-    <Content Include="Views\NguoiDung\DangNhap1.cshtml" />
+    <Content Include="Views\NguoiDung\ThongKhoaHoc.cshtml" />
+    <Content Include="Views\HocVien\XemGioHang.cshtml" />
+    <Content Include="Views\NguoiDung\MonHoc.cshtml" />
+    <Content Include="Views\HocVien\ThanhToan.cshtml" />
+    <Content Include="Views\HocVien\KetThucThanhToan.cshtml" />
+    <Content Include="Views\HocVien\TheoDoiBienLai.cshtml" />
+    <Content Include="Views\HocVien\KhoaHocTheoBienLai.cshtml" />
+    <Content Include="Views\NguoiDung\TimKiem.cshtml" />
+    <Content Include="Views\NguoiDung\KhoaHocTheoGiangVien.cshtml" />
+    <Content Include="Views\NguoiDung\LietKeKhoaHoctheoGiangVien.cshtml" />
+    <Content Include="Views\NguoiDung\KhoaHocTheoMonHoc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

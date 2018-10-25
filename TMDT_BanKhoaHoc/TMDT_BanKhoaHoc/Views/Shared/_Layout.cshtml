@@ -1,4 +1,12 @@
 ﻿@using TMDT_BanKhoaHoc.Models
+@{ 
+    List<KHOAHOC> giohang = (List<KHOAHOC>) Session["GioHang"];
+    int soluong = 0;
+    if(giohang != null)
+    {
+        soluong = giohang.Count;
+    }
+}
 <!DOCTYPE html>
 <!-- saved from url=(0019)https://khoahoc.tv/ -->
 <html>
@@ -10,7 +18,8 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
     <script id="google-apis" async="" src="~/Scripts/platform.js" gapi_processed="true"></script>
     <script id="facebook-jssdk" src="~/Scripts/sdk.js"></script>
     <script async="" src="~/Scripts/analytics.js"></script>
@@ -54,33 +63,44 @@
                         Trang chủ
                     </a>
                 </li>
-                @Html.Action(controllerName: "Partial", actionName: "ListMonHoc", routeValues: new { soluong = 7 })
+
                 @if (Session["HocVien"] == null)
                 {
 
                     <li style="float: right" class="item tax-dangky">
-                        <a href="@Url.Action(controllerName: "NguoiDung", actionName: "DangKy")">
+                        <a href="@Url.Action(controllerName: "HocVien", actionName: "DangKy")">
                             Đăng ký
                         </a>
                     </li>
                     <li style="float: right" class="item tax-dangnhap">
-                        <a href="@Url.Action(controllerName: "NguoiDung", actionName: "DangNhap")">
+                        <a href="@Url.Action(controllerName: "HocVien", actionName: "DangNhap")">
                             Đăng nhập
                         </a>
                     </li>
+
                 }
                 else
                 {
                     HOCVIEN hocvien = (HOCVIEN)Session["HocVien"];
 
-                    <li style="float: right" class="item tax-dangky">
-                        <a href="@Url.Action(controllerName: "NguoiDung", actionName: "DangKy")">
+                    <li style="float: right" class="item tax-dangxuat">
+                        <a href="@Url.Action(controllerName: "HocVien", actionName: "DangXuat")">
                             Đăng xuất
                         </a>
                     </li>
-                    <li style="float: right" class="item tax-dangnhap">
-                        <a href="/">
+                    <li style="float: right" class="item tax-hocvien">
+                        <a href="@Url.Action(controllerName: "HocVien",actionName: "Index")">
                             Xin chào @hocvien.HoTen
+                        </a>
+                    </li>
+                    <li style="float: right" class="item tax-hocvien">
+                        <a href="@Url.Action(controllerName: "HocVien",actionName: "TheoDoiBienLai")">
+                            Theo dõi biên lai
+                        </a>
+                    </li>
+                    <li style="float: right" class="item tax-dangnhap">
+                        <a href="@Url.Action(controllerName: "HocVien", actionName: "XemGioHang")">
+                            Giỏ hàng(<span id="soluong">@soluong</span>)
                         </a>
                     </li>
                 }
@@ -116,7 +136,7 @@
             </div>
             <div class="leftbar">
                 <div class="navbox sidenav clearfix">
-                    <div class="title" style="display:none">☰ Danh mục</div>
+                    <div class="list-title">Môn học</div>
                     <ul id="leftnav" class="navigation clearfix">
                         @Html.Action(controllerName: "Partial", actionName: "ListMonHoc", routeValues: new { soluong = 10 })
                     </ul>

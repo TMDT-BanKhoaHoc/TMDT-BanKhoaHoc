@@ -1,0 +1,114 @@
+﻿@model TMDT_BanKhoaHoc.Models.KHOAHOC
+@using TMDT_BanKhoaHoc.Models
+@{
+    ViewBag.Title = Model.TenKH + " - Thông tin khóa học";
+    IEnumerable<BaiGiang> baigiangs = null;
+    if (ViewBag.BaiGiangs != null)
+    {
+        baigiangs = (IEnumerable<BaiGiang>)ViewBag.BaiGiangs;
+    }
+}
+
+
+<div>
+    <h1>
+        @Model.TenKH
+    </h1>
+    <div class="col-md-12">
+        <div class="col-md-4" style="height: 250px;">
+            <img class="img-thumbnail" style="height: 250px;" src="~/img/@Model.Anhbia" />
+        </div>
+        <div class="col-md-8">
+            <div class="col-md-12">
+                <div class="col-md-5" style="font-weight: bold">
+                    <p>
+                        @Html.DisplayNameFor(model => model.GIANGVIEN.TenGV)
+                    </p>
+                </div>
+                <div class="col-md-7">
+                    <p>
+                        @Html.DisplayFor(model => model.GIANGVIEN.TenGV)
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-5" style="font-weight: bold">
+                    <p>
+                        @Html.DisplayNameFor(model => model.MONHOC.TenMH)
+                    </p>
+                </div>
+                <div class="col-md-7">
+                    <p>
+                        @Html.DisplayFor(model => model.MONHOC.TenMH)
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-5" style="font-weight: bold">
+                    <p>
+                        @Html.DisplayNameFor(model => model.HocPhi)
+                    </p>
+                </div>
+                <div class="col-md-7">
+                    <p>
+                        @string.Format("{0:0,000} VND", Model.HocPhi)
+                    </p>
+                </div>
+            </div>
+            @if (ViewBag.MuaHang == true)
+            {
+                <div class="col-md-2" style="height: 100%; line-height: 100%;">
+                    <button id="themhang" class="btn btn-success" disabled="disabled">Đã mua khóa học</button>
+                </div>
+            }
+            else
+            {
+                <div class="col-md-2" style="height: 100%; line-height: 100%;">
+                    <button id="themhang" class="btn btn-danger" data-themhang="@Model.MaKH">Thêm vào giỏ hàng</button>
+                </div>
+            }
+
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <p>
+                    @Html.DisplayNameFor(model => model.Mota)
+                </p>
+            </div>
+            <div class="col-md-12 thumbnail">
+                @Html.Raw(Model.Mota)
+            </div>
+        </div>
+        @if (ViewBag.BaiGiangs != null)
+        {
+            <div class="col-md-12">
+                <div class="col-md-12">
+                    <p>
+                        Bài giảng
+                    </p>
+                </div>
+                <div class="col-md-12 thumbnail">
+                    <table>
+                        @foreach (var baigiang in baigiangs)
+                        {
+                            <tr style="height: 20px; line-height: 20px;">
+                                <td width="85%">
+                                    @baigiang.MaBaiGiang
+                                </td>
+                                @if (ViewBag.MuaHang == true)
+                                {
+                                    <td width="15%">
+                                        <a href="/" class="btn btn-danger">Học</a>
+                                    </td>
+                                }
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div style="display: none;">
+    <script src="~/Scripts/APIThemGioHang.js"></script>
+</div>
