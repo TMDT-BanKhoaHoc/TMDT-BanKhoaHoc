@@ -82,7 +82,7 @@ namespace TMDT_BanKhoaHoc.Controllers
 
         public ActionResult TimKiem(string text)
         {
-            var khoahocs = db.KHOAHOCs.Where(n => n.TenKH.Contains(text));
+            var khoahocs = db.KHOAHOCs.Where(n => n.TenKH.Contains(text) && n.KetQuaDuyet == true);
             var giangviens = db.GIANGVIENs.Where(n => n.TenGV.Contains(text));
             var monhocs = db.MONHOCs.Where(n => n.TenMH.Contains(text));
             List<object> list = new List<object>();
@@ -127,9 +127,9 @@ namespace TMDT_BanKhoaHoc.Controllers
             return View();
         }
 
-        public ActionResult LietKeKhoaHoctheoGiangVien(int giangvien)
+        public ActionResult LietKeKhoaHocTheoGiangVien(int giangvien)
         {
-            var khoahocs = db.KHOAHOCs.Where(n => n.MaGV == giangvien);
+            var khoahocs = db.KHOAHOCs.Where(n => n.MaGV == giangvien && n.KetQuaDuyet == true);
 
             if(khoahocs.Count() > 0)
             {
@@ -140,7 +140,7 @@ namespace TMDT_BanKhoaHoc.Controllers
 
         public ActionResult KhoaHocTheoMonHoc(int monhoc)
         {
-            var khoahocs = db.KHOAHOCs.Where(n => n.MaMH == monhoc);
+            var khoahocs = db.KHOAHOCs.Where(n => n.MaMH == monhoc && n.KetQuaDuyet == true);
 
             if(khoahocs.Count() > 0)
             {

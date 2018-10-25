@@ -50,8 +50,6 @@
                 <form action="/NguoiDung/TimKiem" method="get" id="cse-search-box">
                     <input class="q" type="text" name="text" size="55" placeholder="Tìm kiếm" style="border: 1px solid rgb(126, 157, 185); padding: 2px; text-indent: 48px;">
                     <input class="asearch" type="submit" name="sa" value="Tìm kiếm">
-
-                    <input name="siteurl" type="hidden" value="khoahoc.tv/"><input name="ref" type="hidden" value="www.google.com.vn/"><input name="ss" type="hidden" value="">
                 </form>
             </div><a class="toggle menu"></a>
             <a class="toggle search"></a>
@@ -138,7 +136,7 @@
                 <div class="navbox sidenav clearfix">
                     <div class="list-title">Môn học</div>
                     <ul id="leftnav" class="navigation clearfix">
-                        @Html.Action(controllerName: "Partial", actionName: "ListMonHoc", routeValues: new { soluong = 10 })
+                        @Html.Action(controllerName: "Partial", actionName: "ListMonHoc")
                     </ul>
                 </div>
             </div>

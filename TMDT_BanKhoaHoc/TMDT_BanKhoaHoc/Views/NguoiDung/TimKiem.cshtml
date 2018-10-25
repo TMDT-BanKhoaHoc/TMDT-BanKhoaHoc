@@ -1,8 +1,5 @@
 ﻿@model IEnumerable<object>
-    @using TMDT_BanKhoaHoc.Models;
-@{
-    Layout = null;
-}
+@using TMDT_BanKhoaHoc.Models;
 
 <div class="listview">
     @if (Model != null)
@@ -48,7 +45,7 @@
                     </a>
                     @if (giangvien.Tieusu != null)
                     {
-                        @if (giangvien.Tieusu.Length > 150)
+                        if(giangvien.Tieusu.Length > 150)
                         {
                             <div class="desc">@giangvien.Tieusu.Substring(0, 150)...</div>
                         }

@@ -4,12 +4,9 @@
     ViewBag.Title = Model.TenGV;
 }
 
-<h2>ViewBag.Title</h2>
+<h2>@ViewBag.Title</h2>
 
 <div>
-    <h1>
-        @Model.TenGV
-    </h1>
     <div class="col-md-12">
         <div class="col-md-8">
             <div class="col-md-12">
@@ -36,8 +33,6 @@
                 @Html.Raw(Model.Tieusu)
             </div>
         </div>
-        @if (ViewBag.BaiGiangs != null)
-        {
             <div class="col-md-12">
                 <div class="col-md-12">
                     <p>
@@ -45,9 +40,8 @@
                     </p>
                 </div>
                 <div class="col-md-12 thumbnail">
-                    @Html.Action(actionName: "LietKeKhoaHoctheoGiangVien", routeValues: new { giangvien = Model.MaGV})
+                    @Html.Action(controllerName: "NguoiDung", actionName: "LietKeKhoaHocTheoGiangVien", routeValues: new { giangvien = Model.MaGV})
                 </div>
             </div>
-        }
     </div>
 </div>
